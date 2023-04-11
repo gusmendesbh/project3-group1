@@ -1,4 +1,4 @@
-# project3-group2
+# project3-group1
 
 Build a dashboard that provides insights into the performance of a sports team or league. Use data from SportsReference, and then use ETL and JavaScript to create visualizations that display statistics such as wins and losses, player performance, and team rankings.
 
