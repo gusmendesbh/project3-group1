@@ -1,9 +1,9 @@
 // Get the data
-const teams = "../data-json/teams.json";
+const teams = "./data-json/teams1.json";
 
 // Fetch the JSON data and console log it
 d3.json(teams).then(function(teams_data) {
-    console.log(teams_data);
+    console.log(teams_data[0]);
   });
 
   // INITIALIZE THE DASHBOARD
@@ -16,19 +16,16 @@ function init() {
     // Get the sample names and populate the dropdown options
     d3.json(teams).then((teams_data) => {
         
-        // Set a variable for the team names
-        let names = teams_data.shortDisplayName;
-
         // Add sample names to the dropdown menu
-        names.forEach((name) => {
+        teams_data.forEach((team) => {
 
-            console.log(name);
+            console.log(team);
 
-            dropdownMenu.append("option").text(name).property("value", name);
+            dropdownMenu.append("option").text(team['shortDisplayName']).property("value", team['shortDisplayName']);
         });
 
         // Get the first sample
-        let firstTeam = names[0];
+        let firstTeam = teams_data[0]['shortDisplayName'];
 
         // Console log the first sample details
         console.log(firstTeam);
@@ -63,7 +60,7 @@ function charts(teamName) {
     // Create a win-loss chart
     let winLossData = [{ x: ['Wins', 'Losses'], 
                         y: [firstTeam.wins, firstTeam.losses], 
-                        type: 'bar' }];
+                        type: 'bar'}];
 
     // Create an average points chart
     let avgPointsData = [
@@ -89,6 +86,8 @@ function charts(teamName) {
         type: 'bar' }
     ];
 
+
+
         // Render the plot to the div tag with id "bar"
         Plotly.newPlot('win-loss-chart', winLossData);
         Plotly.newPlot('avg-points-chart', avgPointsData, avgPointsLayout);
@@ -106,22 +105,27 @@ function demoInfo(teamName) {
     d3.json(teams).then((teams_data) => {
 
     // Filter team data by name
-    let filteredTeam = teams_data.filter(team => team.shortDisplayName == teamName);
+        let filteredTeam = teams_data.filter(teams_data => teams_data.shortDisplayName == teamName);
+        
+        // Retrieve all required information
+        let team_info = {'Team Name':filteredTeam[0]['displayName'], 'Location':filteredTeam[0]['location'],'Win Percent':filteredTeam[0]['divisionWinPercent'], 'Points':filteredTeam[0]['points']};
 
-    // Retrieve all required information
-    let name = filteredTeam.displayName;
-    let location = filteredTeam.location;
-    let winPercent = filteredTeam.divisionWinPercent;
-    let points = filteredTeam.points;
+        let obj = filteredTeam[0]
 
-    // Use D3 to select the Demographic Info box and clear any existing data
-    let demoInfoBox = d3.select("#sample-metadata").html("");
+         // Fecht Team Logos
+        d3.select("#sample-logo").html("");
+        d3.select("#sample-logo").append('img').attr('src', filteredTeam[0]['logos']).attr('alt', filteredTeam[0]['shortDisplayName']).attr('height', 150)
 
-    // Add key/value details from the filtered sample data to the demographic info box
-    Object.entries(name, location, winPercent, points).forEach(([key, value]) => {
 
-        demoInfoBox.append("h5").text(`${key.toUpperCase()}: ${value}`);
+        console.log(filteredTeam[0]['logos'])
+
+        d3.select("#sample-metadata").html("");
+         let entries = Object.entries(team_info);
+         entries.forEach(([key,value]) => {
+            d3.select("#sample-metadata").append("h5").text(`${key}: ${value}`);
         });
+
+
   });
 };
 
