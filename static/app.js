@@ -1,3 +1,4 @@
+// ------- TEAMS DATA ------- //
 // Get the data
 const teams = "./data-json/teams1.json";
 
@@ -8,15 +9,15 @@ d3.json(teams).then(function(teams_data) {
 
   // INITIALIZE THE DASHBOARD
 // Create a function to initialize the details
-function init() {
+function init1() {
 
     // Use D3 to select the dropdown menu
     let dropdownMenu = d3.select("#selDataset");
 
-    // Get the sample names and populate the dropdown options
+    // Get the team names and populate the dropdown options
     d3.json(teams).then((teams_data) => {
         
-        // Add sample names to the dropdown menu
+        // Add team names to the dropdown menu
         teams_data.forEach((team) => {
 
             console.log(team);
@@ -24,10 +25,10 @@ function init() {
             dropdownMenu.append("option").text(team['shortDisplayName']).property("value", team['shortDisplayName']);
         });
 
-        // Get the first sample
+        // Get the first team
         let firstTeam = teams_data[0]['shortDisplayName'];
 
-        // Console log the first sample details
+        // Console log the first team details
         console.log(firstTeam);
 
         // Create the initial plots and demographic info
@@ -78,7 +79,6 @@ function charts(teamName) {
     yaxis: { title: 'Average Points For' }
     };
 
-
     // Create a games played chart
     let gamesPlayedData = [
     { x: ['Games Played', 'Losses', 'Ties', 'Wins'], 
@@ -86,9 +86,7 @@ function charts(teamName) {
         type: 'bar' }
     ];
 
-
-
-        // Render the plot to the div tag with id "bar"
+        // Render the plot to the div tag with the relevant ids
         Plotly.newPlot('win-loss-chart', winLossData);
         Plotly.newPlot('avg-points-chart', avgPointsData, avgPointsLayout);
         Plotly.newPlot('games-played-chart', gamesPlayedData);
@@ -108,7 +106,12 @@ function demoInfo(teamName) {
         let filteredTeam = teams_data.filter(teams_data => teams_data.shortDisplayName == teamName);
         
         // Retrieve all required information
-        let team_info = {'Team Name':filteredTeam[0]['displayName'], 'Location':filteredTeam[0]['location'],'Win Percent':filteredTeam[0]['divisionWinPercent'], 'Points':filteredTeam[0]['points']};
+        let team_info = {
+            'Team Name': filteredTeam[0]['displayName'], 
+            'Location': filteredTeam[0]['location'],
+            'Win Percent': filteredTeam[0]['divisionWinPercent'], 
+            'Points': filteredTeam[0]['points']
+        };
 
         let obj = filteredTeam[0]
 
@@ -124,11 +127,90 @@ function demoInfo(teamName) {
          entries.forEach(([key,value]) => {
             d3.select("#sample-metadata").append("h5").text(`${key}: ${value}`);
         });
-
-
   });
 };
 
+// Call the initialization function
+init1();
+
+
+
+// ------- ATHLETES DATA ------- //
+// Get the data
+const athletes = "./data-json/offense.json";
+
+// Fetch the JSON data and console log it
+d3.json(athletes).then(function(athletes_data) {
+    console.log(athletes_data[0]);
+  });
+
+  // INITIALIZE THE DASHBOARD
+// Create a function to initialize the details
+function init2() {
+
+    // Use D3 to select the dropdown menu
+    let dropdownMenu = d3.select("#selDataset");
+
+    // Get the athlete names and populate the dropdown options
+    d3.json(athletes).then((athletes_data) => {
+        
+        // Add athlete names to the dropdown menu
+        athletes_data.forEach((athlete) => {
+
+            console.log(athlete);
+
+            dropdownMenu.append("option").text(athlete['offense_name']).property("value", athlete['offense_name']);
+        });
+
+        // Get the first athlete
+        let firstAthlete = athletes_data[0]['offense_name'];
+
+        // Console log the first athlete details
+        console.log(firstAthlete);
+
+        // Create the initial demographic info
+        demoInfo(firstAthlete);
+    });
+    };
+
+
+// ATHLETE INFORMATION
+// Create a function to get athlete's Information
+function demoInfo(athleteName) {
+
+    // Use D3 to retrieve all data
+    d3.json(athletes).then((athletes_data) => {
+
+    // Filter athlete data by name
+        let filteredAthlete = athletes_data.filter(athletes_data => athletes_data.offense_name == athleteName);
+        
+        // Retrieve all required information
+        let athlete_info = {
+            'Name': filteredAthlete[0]['offense_name'], 
+            'Weight': filteredAthlete[0]['offense_weight'],
+            'Height': filteredAthlete[0]['offense_height'], 
+            'Age': filteredAthlete[0]['offense_age'],
+            'Birth City': filteredAthlete[0]['offense_birthCity'],
+            'Birth Country':filteredAthlete[0]['offense_birthCountry'], 
+            'Position':filteredAthlete[0]['offense_position'], 
+            'Experience (in years)':filteredAthlete[0]['offense_xp']
+        };
+
+        let obj = filteredAthlete[0]
+
+         // Fecht Athlete Headshot
+        d3.select("#sample-logo").html("");
+        d3.select("#sample-logo").append('img').attr('src', filteredAthlete[0]['offense_headshot']).attr('alt', filteredAthlete[0]['offense_name']).attr('height', 150)
+
+        console.log(filteredAthlete[0]['offense_headshot'])
+
+        d3.select("#sample-metadata").html("");
+         let entries = Object.entries(athlete_info);
+         entries.forEach(([key,value]) => {
+            d3.select("#sample-metadata").append("h5").text(`${key}: ${value}`);
+        });
+  });
+};
 
 // Call the initialization function
-init();
+init2();
