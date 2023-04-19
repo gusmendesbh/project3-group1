@@ -45,7 +45,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>Main Dashboard</span></a>
             </li>
 
             <!-- Divider -->
@@ -57,17 +57,14 @@
             </div>
             
             <!-- Dropdown Menu -->
-            <div class="bg-blue py-2 text-white p-3">
-                
-                <h5><i class="fas fa-clipboard-list"></i> Teams:</h5>
-                <select id="selDataset" onchange="optionChanged(this.value)"></select>
-            </div>
-            <div class="bg-blue py-2 text-white p-3">
-            
-                <h5><i class="fas fa-portrait"></i> Athletes:</h5>
-                <select id="selDataset" onchange="optionChanged(this.value)"></select>
-            </div>
-
+            <li class="nav-item active">
+                <a class="nav-link" href="teams.html">
+                    <i class="fas fa-clipboard"></i>
+                    <span>Teams</span></a>
+                <a class="nav-link" href="athletes.html">
+                    <i class="fas fa-portrait"></i>
+                    <span>Athletes</span></a>
+            </li>
         </ul>
         <!-- End of Sidebar -->
 
@@ -77,51 +74,12 @@
             <!-- Main Content -->
             <div id="content">
 
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
-                                            aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </li>
-
-
-                </nav>
-                <!-- End of Topbar -->
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">NFL 2021/2022 Dashboard</h1>
+                    <div class="d-sm-flex align-items-center justify-content-between mb-9">
+                        <h1 class="h1 mb-0 text-gray-800">NFL 2021/2022 Dashboard</h1>
                     </div>
 
                     <!-- Content Row -->
@@ -205,97 +163,24 @@
                     </div>
 
                     <!-- Content Row -->
-                    <div class="row">            
-                        <div class="col-lg-4 mb-5">
-                        
-                            <!-- Illustrations -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Team Details</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <div id="sample-logo">
-                        
-                                        </div>
-                                        <div id="sample-metadata" class="panel-body"></div>
-                                    </div>                    
-                                </div>
-                            </div>                    
-                        </div>
-
+                    <div class="row">
                         <!-- Area Chart -->
-                        <div class="col-lg-4 mb-5">
+                        <div class="col-lg-12 mb-5">
                             <div class="card shadow mb-4">
-
+                        
                                 <!-- Card Headern -->
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Win x Loss</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">All Teams</h6>
                                 </div>
-
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <div id="win-loss-chart" style="height: 300px"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Pie Chart</h6>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <div id="avg-points-chart" style="height: 300px"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Content Column -->
-                        <div class="col-lg-6 mb-4">
-
-                            <!-- Project Card Example -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Map Chart</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-map pt-4 pb-2">
-                                        <div id="games-played-chart"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="col-lg-6 mb-4">
                         
-                            <!-- Project Card Example -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Map Chart</h6>
-                                </div>
+                                <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-map pt-4 pb-2">
-                                        <div id="games-played-chart"></div>
+                                    <div class="chart-area">
+                                        <div id="all-teams-chart" style="height: 300px"></div>
                                     </div>
                                 </div>
-                            </div>       
-                        </div>
+                            </div>   
                     </div>
-
                 </div>
                 <!-- /.container-fluid -->
 
@@ -354,6 +239,7 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="./static/app.js"></script>
+    <script src="./static/app2.js"></script>
 
 </body>
 
