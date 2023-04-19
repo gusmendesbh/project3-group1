@@ -59,8 +59,8 @@
             <!-- Dropdown Menu -->
             <div class="bg-blue py-2 text-white p-3">
             
-                <h5><i class="fas fa-clipboard-list"></i> Teams:</h5>
-                <select id="selPlayer" onchange="optionChanged(this.value)"></select>
+                <h5><i class="fas fa-clipboard-list"></i> Athletes:</h5>
+                <select id="selPlayer" onchange="playerOptionChanged(this.value)"></select>
             </div>
         </ul>
         <!-- End of Sidebar -->
@@ -160,54 +160,36 @@
 
                     <!-- Content Row -->
                     <div class="row">            
-                        <div class="col-lg-4 mb-5">
+                        <div class="justify-content-center col-xl-3 col-lg-2.5 mb-5">
                         
                             <!-- Illustrations -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Team Details</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Athlete Details</h6>
                                 </div>
                                 <div class="card-body">
-                                    <div class="chart-area">
-                                        <div id="player-logo">
-                        
-                                        </div>
-                                        <div id="player-metadata" class="panel-body"></div>
+                                    <div class="chart-area p-5" style="height: 500px">
+                                        <!-- <div id="player-team"></div> -->
+                                        <div id="player-logo"></div>
+                                        <div id="player-metadata" style="padding: 20px"></div>
                                     </div>                    
                                 </div>
                             </div>                    
                         </div>
 
                         <!-- Area Chart -->
-                        <div class="col-lg-4 mb-5">
+                        <div class="col-lg-9 mb-5">
                             <div class="card shadow mb-4">
 
                                 <!-- Card Headern -->
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Win x Loss</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">News</h6>
                                 </div>
 
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-area">
-                                        <div id="player-chart1" style="height: 300px"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Pie Chart</h6>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <div id="player-chart2" style="height: 300px"></div>
+                                    <div class="chart-area" style="height: 500px">
+                                        <div id="player-chart1"></div>
                                     </div>
                                 </div>
                             </div>
@@ -307,7 +289,7 @@
     <!-- Custom scripts for all pages-->
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="./static/app.js"></script>
+    <script src="./static/athletes.js"></script>
 
 </body>
 
