@@ -168,6 +168,7 @@ const dropdown = document.getElementById('selPlayer');
 // Add an event listener to the dropdown
 dropdown.addEventListener('playerOptionChanged', function() {
 
+
   // Get the selected player name
   const playerName = dropdown.value;
   
@@ -254,8 +255,10 @@ function playerDemoInfo(athleteName) {
         // let obj = filteredAthlete[0]
 
          // Fecht Athlete Headshot
+
         d3.select("#player-logo").html("");
         d3.select("#player-logo").append('img').attr('src', filteredAthlete[0]['headshot']).attr('alt', filteredAthlete[0]['name']).attr('height', 150)
+
 
         console.log(filteredAthlete[0]['headshot'])
 
