@@ -12,7 +12,7 @@ d3.json(teams).then(function(teams_data) {
 function init1() {
 
     // Use D3 to select the dropdown menu
-    let dropdownMenu = d3.select("#selDataset");
+    let dropdownMenu = d3.select("#selTeam");
 
     // Get the team names and populate the dropdown options
     d3.json(teams).then((teams_data) => {
@@ -143,7 +143,7 @@ const defense = "./data-json/defense.json";
 const special = "./data-json/special.json";
 
 // Get the dropdown element
-const dropdown = document.getElementById('player-dropdown');
+const dropdown = document.getElementById('selPlayer');
 
 
 // Add the player names from each dataset to the dropdown
