@@ -1,6 +1,6 @@
 // ------- TEAMS DATA ------- //
 // Get the data
-const teams = "./data-json/teams1.json";
+const teams = "./data-json/teams.json";
 
 // Fetch the JSON data and console log it
 d3.json(teams).then(function(teams_data) {
@@ -32,22 +32,22 @@ function init1() {
         console.log(firstTeam);
 
         // Create the initial plots and demographic info
-        charts(firstTeam);
-        demoInfo(firstTeam);
+        teamCharts(firstTeam);
+        teamDemoInfo(firstTeam);
     });
     };
 
 
 // UPDATE THE CHARTS AND DEMOGRAPHIC INFO 
 // Change the charts and demographic info box based on dropdown selection
-function optionChanged(newTeam) {
-    charts(newTeam);
-    demoInfo(newTeam);
+function teamOptionChanged(newTeam) {
+    teamCharts(newTeam);
+    teamDemoInfo(newTeam);
     };
 
 // BUILD THE CHARTS
 // Create a function to build the charts
-function charts(teamName) {
+function teamCharts(teamName) {
 
     // Use D3 to retrieve all data
     d3.json(teams).then((teams_data) => {
@@ -87,9 +87,9 @@ function charts(teamName) {
     ];
 
         // Render the plot to the div tag with the relevant ids
-        Plotly.newPlot('win-loss-chart', winLossData);
-        Plotly.newPlot('avg-points-chart', avgPointsData, avgPointsLayout);
-        Plotly.newPlot('games-played-chart', gamesPlayedData);
+        Plotly.newPlot('team-chart1', winLossData);
+        Plotly.newPlot('team-chart2', avgPointsData, avgPointsLayout);
+        Plotly.newPlot('team-chart3', gamesPlayedData);
         
     });
     };
@@ -97,7 +97,7 @@ function charts(teamName) {
 
 // TEAM INFORMATION
 // Create a function to get team's Information
-function demoInfo(teamName) {
+function teamDemoInfo(teamName) {
 
     // Use D3 to retrieve all data
     d3.json(teams).then((teams_data) => {
@@ -113,25 +113,34 @@ function demoInfo(teamName) {
             'Points': filteredTeam[0]['points']
         };
 
-        let obj = filteredTeam[0]
+        // let obj = filteredTeam[0]
 
          // Fecht Team Logos
-        d3.select("#sample-logo").html("");
-        d3.select("#sample-logo").append('img').attr('src', filteredTeam[0]['logos']).attr('alt', filteredTeam[0]['shortDisplayName']).attr('height', 150)
+        d3.select("#team-logo").html("");
+        d3.select("#team-logo").append('img').attr('src', filteredTeam[0]['logos']).attr('alt', filteredTeam[0]['shortDisplayName']).attr('height', 150)
 
 
         console.log(filteredTeam[0]['logos'])
 
-        d3.select("#sample-metadata").html("");
+        d3.select("#team-metadata").html("");
          let entries = Object.entries(team_info);
          entries.forEach(([key,value]) => {
-            d3.select("#sample-metadata").append("h5").text(`${key}: ${value}`);
+            d3.select("#team-metadata").append("h5").text(`${key}: ${value}`);
         });
   });
 };
 
 // Call the initialization function
 init1();
+
+
+
+
+
+
+
+
+
 
 
 
@@ -157,7 +166,8 @@ const dropdown = document.getElementById('selPlayer');
   });
 
 // Add an event listener to the dropdown
-dropdown.addEventListener('change', function() {
+dropdown.addEventListener('playerOptionChanged', function() {
+
 
   // Get the selected player name
   const playerName = dropdown.value;
@@ -195,7 +205,7 @@ d3.json(athletes_dataset).then(function(athletes_data) {
 function init2() {
 
     // Use D3 to select the dropdown menu
-    let dropdownMenu = d3.select("#selDataset");
+    let dropdownMenu = d3.select("#selPlayer");
 
     // Get the athlete names and populate the dropdown options
     d3.json(athletes_dataset).then((athletes_data) => {
@@ -207,14 +217,22 @@ function init2() {
         console.log(firstAthlete);
 
         // Create the initial demographic info
-        demoInfo(firstAthlete);
+        playerDemoInfo(firstAthlete);
+
+
+        // UPDATE THE CHARTS AND DEMOGRAPHIC INFO 
+        // Change the charts and demographic info box based on dropdown selection
+        function playerOptionChanged(newPlayer) {
+            // teamCharts(newTeam);
+            playerDemoInfo(newPlayer);
+    };
     });
     };
 
 
 // ATHLETE INFORMATION
 // Create a function to get athlete's Information
-function demoInfo(athleteName) {
+function playerDemoInfo(athleteName) {
 
     // Use D3 to retrieve all data
     d3.json(athletes).then((athletes_data) => {
@@ -234,18 +252,20 @@ function demoInfo(athleteName) {
             'Experience (in years)':filteredAthlete[0]['xp']
         };
 
-        let obj = filteredAthlete[0]
+        // let obj = filteredAthlete[0]
 
          // Fecht Athlete Headshot
-        d3.select("#sample-logo").html("");
-        d3.select("#sample-logo").append('img').attr('src', filteredAthlete[0]['headshot']).attr('alt', filteredAthlete[0]['name']).attr('height', 150)
+
+        d3.select("#player-logo").html("");
+        d3.select("#player-logo").append('img').attr('src', filteredAthlete[0]['headshot']).attr('alt', filteredAthlete[0]['name']).attr('height', 150)
+
 
         console.log(filteredAthlete[0]['headshot'])
 
-        d3.select("#sample-metadata").html("");
+        d3.select("#player-metadata").html("");
          let entries = Object.entries(athlete_info);
          entries.forEach(([key,value]) => {
-            d3.select("#sample-metadata").append("h5").text(`${key}: ${value}`);
+            d3.select("#player-metadata").append("h5").text(`${key}: ${value}`);
         });
   });
 };
