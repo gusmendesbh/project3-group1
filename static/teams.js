@@ -109,9 +109,9 @@ function teamCharts(teamName) {
     ];
 
         // Render the plot to the div tag with the relevant ids
-        Plotly.newPlot('team-chart1', winLossData);
+        // Plotly.newPlot('team-chart1', winLossData);
         Plotly.newPlot('team-chart2', avgPointsData, avgPointsLayout);
-        Plotly.newPlot('team-chart3', gamesPlayedData);
+        Plotly.newPlot('team-chart1', gamesPlayedData);
         
     });
     };
@@ -154,8 +154,6 @@ function teamDemoInfo(teamName) {
 
 // Call the initialization function
 init();
-
-
 
 
 
