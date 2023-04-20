@@ -95,9 +95,17 @@ function teamCharts(teamName) {
 
     // Create a games played chart
     let gamesPlayedData = [
-    { x: ['Games Played', 'Losses', 'Ties', 'Wins'], 
-        y: [firstTeam.gamesPlayed, firstTeam.losses, firstTeam.ties, firstTeam.wins], 
-        type: 'bar' }
+    { x: ['Losses', 'Ties', 'Wins'], 
+        y: [firstTeam.losses, firstTeam.ties, firstTeam.wins], 
+        type: 'bar',
+        marker: {
+            color: '#003366',
+            line: {
+                color: '#CC0000',
+                width: 1.5
+              },
+            opacity: 0.9,
+          } }
     ];
 
         // Render the plot to the div tag with the relevant ids
