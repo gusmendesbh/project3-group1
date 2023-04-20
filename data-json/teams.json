@@ -16,10 +16,10 @@
         "divisionWinPercent":0.33333334,
         "gamesPlayed":17.0,
         "losses":10.0,
-        "ties":0.0,
-        "wins":7.0,
-        "winPercent":0.4117647,
-        "points":-1.5
+        "ties":2.0,
+        "wins":0.4117647,
+        "winPercent":0.0,
+        "points":-21.0
     },
     {
         "id":2,
@@ -38,10 +38,10 @@
         "divisionWinPercent":0.6666667,
         "gamesPlayed":16.0,
         "losses":3.0,
-        "ties":0.0,
-        "wins":13.0,
-        "winPercent":0.8125,
-        "points":5.0
+        "ties":7.0,
+        "wins":0.8125,
+        "winPercent":0.0,
+        "points":169.0
     },
     {
         "id":3,
@@ -60,10 +60,10 @@
         "divisionWinPercent":0.0,
         "gamesPlayed":17.0,
         "losses":14.0,
-        "ties":0.0,
-        "wins":3.0,
-        "winPercent":0.1764706,
-        "points":-5.5
+        "ties":-10.0,
+        "wins":0.1764706,
+        "winPercent":0.0,
+        "points":-137.0
     },
     {
         "id":4,
@@ -82,10 +82,10 @@
         "divisionWinPercent":0.5,
         "gamesPlayed":16.0,
         "losses":4.0,
-        "ties":0.0,
-        "wins":12.0,
-        "winPercent":0.75,
-        "points":4.0
+        "ties":8.0,
+        "wins":0.75,
+        "winPercent":0.0,
+        "points":96.0
     },
     {
         "id":5,
@@ -104,10 +104,10 @@
         "divisionWinPercent":0.5,
         "gamesPlayed":17.0,
         "losses":10.0,
-        "ties":0.0,
-        "wins":7.0,
-        "winPercent":0.4117647,
-        "points":-1.5
+        "ties":-1.0,
+        "wins":0.4117647,
+        "winPercent":0.0,
+        "points":-20.0
     },
     {
         "id":6,
@@ -126,10 +126,10 @@
         "divisionWinPercent":0.6666667,
         "gamesPlayed":17.0,
         "losses":5.0,
-        "ties":0.0,
-        "wins":12.0,
-        "winPercent":0.7058824,
-        "points":3.5
+        "ties":-1.0,
+        "wins":0.7058824,
+        "winPercent":0.0,
+        "points":125.0
     },
     {
         "id":7,
@@ -148,10 +148,10 @@
         "divisionWinPercent":0.16666667,
         "gamesPlayed":17.0,
         "losses":12.0,
-        "ties":0.0,
-        "wins":5.0,
-        "winPercent":0.29411766,
-        "points":-3.5
+        "ties":1.0,
+        "wins":0.29411766,
+        "winPercent":0.0,
+        "points":-72.0
     },
     {
         "id":8,
@@ -170,10 +170,10 @@
         "divisionWinPercent":0.8333333,
         "gamesPlayed":17.0,
         "losses":8.0,
-        "ties":0.0,
-        "wins":9.0,
-        "winPercent":0.5294118,
-        "points":0.5
+        "ties":2.0,
+        "wins":0.5294118,
+        "winPercent":0.0,
+        "points":26.0
     },
     {
         "id":9,
@@ -192,10 +192,10 @@
         "divisionWinPercent":0.5,
         "gamesPlayed":17.0,
         "losses":9.0,
-        "ties":0.0,
-        "wins":8.0,
-        "winPercent":0.47058824,
-        "points":-0.5
+        "ties":-1.0,
+        "wins":0.47058824,
+        "winPercent":0.0,
+        "points":-1.0
     },
     {
         "id":10,
@@ -214,10 +214,10 @@
         "divisionWinPercent":0.5,
         "gamesPlayed":17.0,
         "losses":10.0,
-        "ties":0.0,
-        "wins":7.0,
-        "winPercent":0.4117647,
-        "points":-1.5
+        "ties":-7.0,
+        "wins":0.4117647,
+        "winPercent":0.0,
+        "points":-61.0
     },
     {
         "id":11,
@@ -236,10 +236,10 @@
         "divisionWinPercent":0.25,
         "gamesPlayed":17.0,
         "losses":12.0,
-        "ties":1.0,
-        "wins":4.0,
-        "winPercent":0.2647059,
-        "points":-4.0
+        "ties":-7.0,
+        "wins":0.2647059,
+        "winPercent":1.0,
+        "points":-138.0
     },
     {
         "id":12,
@@ -258,10 +258,10 @@
         "divisionWinPercent":1.0,
         "gamesPlayed":17.0,
         "losses":3.0,
-        "ties":0.0,
-        "wins":14.0,
-        "winPercent":0.8235294,
-        "points":5.5
+        "ties":5.0,
+        "wins":0.8235294,
+        "winPercent":0.0,
+        "points":127.0
     },
     {
         "id":13,
@@ -280,10 +280,10 @@
         "divisionWinPercent":0.5,
         "gamesPlayed":17.0,
         "losses":11.0,
-        "ties":0.0,
-        "wins":6.0,
-        "winPercent":0.3529412,
-        "points":-2.5
+        "ties":-3.0,
+        "wins":0.3529412,
+        "winPercent":0.0,
+        "points":-23.0
     },
     {
         "id":14,
@@ -302,10 +302,10 @@
         "divisionWinPercent":0.16666667,
         "gamesPlayed":17.0,
         "losses":12.0,
-        "ties":0.0,
-        "wins":5.0,
-        "winPercent":0.29411766,
-        "points":-3.5
+        "ties":-2.0,
+        "wins":0.29411766,
+        "winPercent":0.0,
+        "points":-77.0
     },
     {
         "id":15,
@@ -324,10 +324,10 @@
         "divisionWinPercent":0.5,
         "gamesPlayed":17.0,
         "losses":8.0,
-        "ties":0.0,
-        "wins":9.0,
-        "winPercent":0.5294118,
-        "points":0.5
+        "ties":1.0,
+        "wins":0.5294118,
+        "winPercent":0.0,
+        "points":-2.0
     },
     {
         "id":16,
@@ -346,10 +346,10 @@
         "divisionWinPercent":0.6666667,
         "gamesPlayed":17.0,
         "losses":4.0,
-        "ties":0.0,
-        "wins":13.0,
-        "winPercent":0.7647059,
-        "points":4.5
+        "ties":1.0,
+        "wins":0.7647059,
+        "winPercent":0.0,
+        "points":-3.0
     },
     {
         "id":17,
@@ -368,10 +368,10 @@
         "divisionWinPercent":0.5,
         "gamesPlayed":17.0,
         "losses":9.0,
-        "ties":0.0,
-        "wins":8.0,
-        "winPercent":0.47058824,
-        "points":-0.5
+        "ties":-1.0,
+        "wins":0.47058824,
+        "winPercent":0.0,
+        "points":17.0
     },
     {
         "id":18,
@@ -390,10 +390,10 @@
         "divisionWinPercent":0.33333334,
         "gamesPlayed":17.0,
         "losses":10.0,
-        "ties":0.0,
-        "wins":7.0,
-        "winPercent":0.4117647,
-        "points":-1.5
+        "ties":-1.0,
+        "wins":0.4117647,
+        "winPercent":0.0,
+        "points":-15.0
     },
     {
         "id":19,
@@ -412,10 +412,10 @@
         "divisionWinPercent":0.25,
         "gamesPlayed":17.0,
         "losses":7.0,
-        "ties":1.0,
-        "wins":9.0,
-        "winPercent":0.5588235,
-        "points":1.0
+        "ties":-1.0,
+        "wins":0.5588235,
+        "winPercent":1.0,
+        "points":-6.0
     },
     {
         "id":20,
@@ -434,10 +434,10 @@
         "divisionWinPercent":0.33333334,
         "gamesPlayed":17.0,
         "losses":10.0,
-        "ties":0.0,
-        "wins":7.0,
-        "winPercent":0.4117647,
-        "points":-1.5
+        "ties":-6.0,
+        "wins":0.4117647,
+        "winPercent":0.0,
+        "points":-20.0
     },
     {
         "id":21,
@@ -456,10 +456,10 @@
         "divisionWinPercent":0.6666667,
         "gamesPlayed":17.0,
         "losses":3.0,
-        "ties":0.0,
-        "wins":14.0,
-        "winPercent":0.8235294,
-        "points":5.5
+        "ties":1.0,
+        "wins":0.8235294,
+        "winPercent":0.0,
+        "points":133.0
     },
     {
         "id":22,
@@ -478,10 +478,10 @@
         "divisionWinPercent":0.16666667,
         "gamesPlayed":17.0,
         "losses":13.0,
-        "ties":0.0,
-        "wins":4.0,
-        "winPercent":0.23529412,
-        "points":-4.5
+        "ties":-7.0,
+        "wins":0.23529412,
+        "winPercent":0.0,
+        "points":-109.0
     },
     {
         "id":23,
@@ -500,10 +500,10 @@
         "divisionWinPercent":0.5,
         "gamesPlayed":17.0,
         "losses":8.0,
-        "ties":0.0,
-        "wins":9.0,
-        "winPercent":0.5294118,
-        "points":0.5
+        "ties":4.0,
+        "wins":0.5294118,
+        "winPercent":0.0,
+        "points":-38.0
     },
     {
         "id":24,
@@ -522,10 +522,10 @@
         "divisionWinPercent":0.33333334,
         "gamesPlayed":17.0,
         "losses":7.0,
-        "ties":0.0,
-        "wins":10.0,
-        "winPercent":0.5882353,
-        "points":1.5
+        "ties":-1.0,
+        "wins":0.5882353,
+        "winPercent":0.0,
+        "points":7.0
     },
     {
         "id":25,
@@ -544,10 +544,10 @@
         "divisionWinPercent":1.0,
         "gamesPlayed":17.0,
         "losses":4.0,
-        "ties":0.0,
-        "wins":13.0,
-        "winPercent":0.7647059,
-        "points":4.5
+        "ties":10.0,
+        "wins":0.7647059,
+        "winPercent":0.0,
+        "points":173.0
     },
     {
         "id":26,
@@ -566,10 +566,10 @@
         "divisionWinPercent":0.6666667,
         "gamesPlayed":17.0,
         "losses":8.0,
-        "ties":0.0,
-        "wins":9.0,
-        "winPercent":0.5294118,
-        "points":0.5
+        "ties":2.0,
+        "wins":0.5294118,
+        "winPercent":0.0,
+        "points":6.0
     },
     {
         "id":27,
@@ -588,10 +588,10 @@
         "divisionWinPercent":0.6666667,
         "gamesPlayed":17.0,
         "losses":9.0,
-        "ties":0.0,
-        "wins":8.0,
-        "winPercent":0.47058824,
-        "points":-0.5
+        "ties":-1.0,
+        "wins":0.47058824,
+        "winPercent":0.0,
+        "points":-45.0
     },
     {
         "id":28,
@@ -611,9 +611,9 @@
         "gamesPlayed":17.0,
         "losses":8.0,
         "ties":1.0,
-        "wins":8.0,
-        "winPercent":0.5,
-        "points":0.0
+        "wins":0.5,
+        "winPercent":1.0,
+        "points":-22.0
     },
     {
         "id":29,
@@ -632,10 +632,10 @@
         "divisionWinPercent":0.6666667,
         "gamesPlayed":17.0,
         "losses":10.0,
-        "ties":0.0,
-        "wins":7.0,
-        "winPercent":0.4117647,
-        "points":-1.5
+        "ties":1.0,
+        "wins":0.4117647,
+        "winPercent":0.0,
+        "points":-27.0
     },
     {
         "id":30,
@@ -654,10 +654,10 @@
         "divisionWinPercent":0.6666667,
         "gamesPlayed":17.0,
         "losses":8.0,
-        "ties":0.0,
-        "wins":9.0,
-        "winPercent":0.5294118,
-        "points":0.5
+        "ties":5.0,
+        "wins":0.5294118,
+        "winPercent":0.0,
+        "points":54.0
     },
     {
         "id":33,
@@ -676,10 +676,10 @@
         "divisionWinPercent":0.5,
         "gamesPlayed":17.0,
         "losses":7.0,
-        "ties":0.0,
-        "wins":10.0,
-        "winPercent":0.5882353,
-        "points":1.5
+        "ties":-2.0,
+        "wins":0.5882353,
+        "winPercent":0.0,
+        "points":35.0
     },
     {
         "id":34,
@@ -699,8 +699,8 @@
         "gamesPlayed":17.0,
         "losses":13.0,
         "ties":1.0,
-        "wins":3.0,
-        "winPercent":0.20588236,
-        "points":-5.0
+        "wins":0.20588236,
+        "winPercent":1.0,
+        "points":-131.0
     }
 ]
