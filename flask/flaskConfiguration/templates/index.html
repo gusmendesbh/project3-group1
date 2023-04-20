@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{url_for('index')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Main Dashboard</span></a>
             </li>
@@ -58,10 +58,10 @@
             
             <!-- Dropdown Menu -->
             <li class="nav-item active">
-                <a class="nav-link" href="teams.html">
+                <a class="nav-link" href="{{url_for('teams')}}">
                     <i class="fas fa-clipboard"></i>
                     <span>Teams</span></a>
-                <a class="nav-link" href="athletes.html">
+                <a class="nav-link" href="{{url_for('athletes')}}">
                     <i class="fas fa-portrait"></i>
                     <span>Athletes</span></a>
             </li>
@@ -239,7 +239,7 @@
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="../static/js/athletes.js"></script>
-    <script src="./static/teams.js"></script>
+    <script src="./static/js/teams.js"></script>
 
 </body>
 
