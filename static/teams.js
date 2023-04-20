@@ -11,7 +11,7 @@ d3.json(teams).then(function(teams_data) {
 // Create a function to initialize the details
 function init() {
 
-    // Use D3 to select the dropdown menu
+    // Use D3 to select the dropdown menu  
     let dropdownMenu = d3.select("#selTeam");
 
     // Get the team names and populate the dropdown options
@@ -67,7 +67,15 @@ function teamCharts(teamName) {
     // Create a win-loss chart
     let winLossData = [{ x: ['Wins', 'Losses'], 
                         y: [firstTeam['wins'], firstTeam['losses']], 
-                        type: 'bar'}];
+                        type: 'bar',
+                        marker: {
+                            color: '#003366',
+                            line: {
+                                color: '#CC0000',
+                                width: 1.5
+                              },
+                            opacity: 0.9,
+                          }}];
 
     // Create an average points chart
     let avgPointsData = [
