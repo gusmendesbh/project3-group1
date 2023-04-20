@@ -48,7 +48,7 @@ fetch(stats)
     };
     
     // Create the chart
-    Highcharts.chart('container', options);
+    Highcharts.chart('team-chart3', options);
   })
   .catch(error => console.error(error));
               
