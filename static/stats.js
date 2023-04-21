@@ -19,7 +19,7 @@ fetch(stats)
             text: 'Scores Away vs. Scores Home'
         },
         subtitle: {
-            text: "2002 - 2022"
+            text: "2002 - 2023"
         },
         xAxis: {
             categories: filteredData.map(row => row.date)
