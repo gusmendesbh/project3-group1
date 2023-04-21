@@ -1,5 +1,6 @@
 [
     {
+        "type":"specialTeam",
         "teamID":1,
         "teamName":"Atlanta Falcons",
         "name":"Younghoe Koo",
@@ -16,6 +17,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3049899.png"
     },
     {
+        "type":"specialTeam",
         "teamID":1,
         "teamName":"Atlanta Falcons",
         "name":"Liam McCullough",
@@ -32,6 +34,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3915528.png"
     },
     {
+        "type":"specialTeam",
         "teamID":1,
         "teamName":"Atlanta Falcons",
         "name":"Bradley Pinion",
@@ -48,6 +51,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/2977680.png"
     },
     {
+        "type":"specialTeam",
         "teamID":2,
         "teamName":"Buffalo Bills",
         "name":"Tyler Bass",
@@ -64,6 +68,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3917232.png"
     },
     {
+        "type":"specialTeam",
         "teamID":2,
         "teamName":"Buffalo Bills",
         "name":"Reid Ferguson",
@@ -80,6 +85,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/2976549.png"
     },
     {
+        "type":"specialTeam",
         "teamID":2,
         "teamName":"Buffalo Bills",
         "name":"Sam Martin",
@@ -96,6 +102,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/15928.png"
     },
     {
+        "type":"specialTeam",
         "teamID":3,
         "teamName":"Chicago Bears",
         "name":"Trenton Gill",
@@ -112,6 +119,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4240128.png"
     },
     {
+        "type":"specialTeam",
         "teamID":3,
         "teamName":"Chicago Bears",
         "name":"Cairo Santos",
@@ -128,6 +136,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/17427.png"
     },
     {
+        "type":"specialTeam",
         "teamID":3,
         "teamName":"Chicago Bears",
         "name":"Patrick Scales",
@@ -144,6 +153,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/14572.png"
     },
     {
+        "type":"specialTeam",
         "teamID":4,
         "teamName":"Cincinnati Bengals",
         "name":"Cal Adomitis",
@@ -160,6 +170,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4240719.png"
     },
     {
+        "type":"specialTeam",
         "teamID":4,
         "teamName":"Cincinnati Bengals",
         "name":"Drue Chrisman",
@@ -176,6 +187,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4040607.png"
     },
     {
+        "type":"specialTeam",
         "teamID":4,
         "teamName":"Cincinnati Bengals",
         "name":"Evan McPherson",
@@ -192,6 +204,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4360234.png"
     },
     {
+        "type":"specialTeam",
         "teamID":5,
         "teamName":"Cleveland Browns",
         "name":"Corey Bojorquez",
@@ -208,6 +221,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4039396.png"
     },
     {
+        "type":"specialTeam",
         "teamID":5,
         "teamName":"Cleveland Browns",
         "name":"Charley Hughlett",
@@ -224,6 +238,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/15379.png"
     },
     {
+        "type":"specialTeam",
         "teamID":5,
         "teamName":"Cleveland Browns",
         "name":"Cade York",
@@ -240,6 +255,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4428963.png"
     },
     {
+        "type":"specialTeam",
         "teamID":6,
         "teamName":"Dallas Cowboys",
         "name":"Bryan Anger",
@@ -256,6 +272,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/14950.png"
     },
     {
+        "type":"specialTeam",
         "teamID":6,
         "teamName":"Dallas Cowboys",
         "name":"Trent Sieg",
@@ -272,6 +289,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3052357.png"
     },
     {
+        "type":"specialTeam",
         "teamID":7,
         "teamName":"Denver Broncos",
         "name":"Riley Dixon",
@@ -288,6 +306,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/2577619.png"
     },
     {
+        "type":"specialTeam",
         "teamID":7,
         "teamName":"Denver Broncos",
         "name":"Brandon McManus",
@@ -304,6 +323,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/16339.png"
     },
     {
+        "type":"specialTeam",
         "teamID":8,
         "teamName":"Detroit Lions",
         "name":"Michael Badgley",
@@ -320,6 +340,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3123052.png"
     },
     {
+        "type":"specialTeam",
         "teamID":8,
         "teamName":"Detroit Lions",
         "name":"Scott Daly",
@@ -336,6 +357,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/2980138.png"
     },
     {
+        "type":"specialTeam",
         "teamID":8,
         "teamName":"Detroit Lions",
         "name":"Jack Fox",
@@ -352,6 +374,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3916370.png"
     },
     {
+        "type":"specialTeam",
         "teamID":9,
         "teamName":"Green Bay Packers",
         "name":"Jack Coco",
@@ -368,6 +391,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4240499.png"
     },
     {
+        "type":"specialTeam",
         "teamID":9,
         "teamName":"Green Bay Packers",
         "name":"Pat O'Donnell",
@@ -384,6 +408,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/16863.png"
     },
     {
+        "type":"specialTeam",
         "teamID":9,
         "teamName":"Green Bay Packers",
         "name":"Matthew Orzech",
@@ -400,6 +425,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4422336.png"
     },
     {
+        "type":"specialTeam",
         "teamID":10,
         "teamName":"Tennessee Titans",
         "name":"Morgan Cox",
@@ -416,6 +442,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/13848.png"
     },
     {
+        "type":"specialTeam",
         "teamID":10,
         "teamName":"Tennessee Titans",
         "name":"Caleb Shudak",
@@ -432,6 +459,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4036146.png"
     },
     {
+        "type":"specialTeam",
         "teamID":10,
         "teamName":"Tennessee Titans",
         "name":"Ryan Stonehouse",
@@ -448,6 +476,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4256051.png"
     },
     {
+        "type":"specialTeam",
         "teamID":11,
         "teamName":"Indianapolis Colts",
         "name":"Matt Gay",
@@ -464,6 +493,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4249087.png"
     },
     {
+        "type":"specialTeam",
         "teamID":11,
         "teamName":"Indianapolis Colts",
         "name":"Luke Rhodes",
@@ -480,6 +510,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/2566045.png"
     },
     {
+        "type":"specialTeam",
         "teamID":11,
         "teamName":"Indianapolis Colts",
         "name":"Rigoberto Sanchez",
@@ -496,6 +527,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3914922.png"
     },
     {
+        "type":"specialTeam",
         "teamID":12,
         "teamName":"Kansas City Chiefs",
         "name":"Harrison Butker",
@@ -512,6 +544,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3055899.png"
     },
     {
+        "type":"specialTeam",
         "teamID":12,
         "teamName":"Kansas City Chiefs",
         "name":"Tommy Townsend",
@@ -528,6 +561,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3915398.png"
     },
     {
+        "type":"specialTeam",
         "teamID":12,
         "teamName":"Kansas City Chiefs",
         "name":"James Winchester",
@@ -544,6 +578,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/16665.png"
     },
     {
+        "type":"specialTeam",
         "teamID":13,
         "teamName":"Las Vegas Raiders",
         "name":"Jacob Bobenmoyer",
@@ -560,6 +595,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3925443.png"
     },
     {
+        "type":"specialTeam",
         "teamID":13,
         "teamName":"Las Vegas Raiders",
         "name":"Daniel Carlson",
@@ -576,6 +612,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3051909.png"
     },
     {
+        "type":"specialTeam",
         "teamID":13,
         "teamName":"Las Vegas Raiders",
         "name":"AJ Cole",
@@ -592,6 +629,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3686689.png"
     },
     {
+        "type":"specialTeam",
         "teamID":15,
         "teamName":"Miami Dolphins",
         "name":"Jake Bailey",
@@ -608,6 +646,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3931395.png"
     },
     {
+        "type":"specialTeam",
         "teamID":15,
         "teamName":"Miami Dolphins",
         "name":"Blake Ferguson",
@@ -624,6 +663,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3843470.png"
     },
     {
+        "type":"specialTeam",
         "teamID":15,
         "teamName":"Miami Dolphins",
         "name":"Jason Sanders",
@@ -640,6 +680,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3124679.png"
     },
     {
+        "type":"specialTeam",
         "teamID":16,
         "teamName":"Minnesota Vikings",
         "name":"Andrew DePaola",
@@ -656,6 +697,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/15726.png"
     },
     {
+        "type":"specialTeam",
         "teamID":16,
         "teamName":"Minnesota Vikings",
         "name":"Greg Joseph",
@@ -672,6 +714,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3975763.png"
     },
     {
+        "type":"specialTeam",
         "teamID":16,
         "teamName":"Minnesota Vikings",
         "name":"Ryan Wright",
@@ -688,6 +731,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4361823.png"
     },
     {
+        "type":"specialTeam",
         "teamID":17,
         "teamName":"New England Patriots",
         "name":"Joe Cardona",
@@ -704,6 +748,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/2575907.png"
     },
     {
+        "type":"specialTeam",
         "teamID":17,
         "teamName":"New England Patriots",
         "name":"Nick Folk",
@@ -720,6 +765,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/10621.png"
     },
     {
+        "type":"specialTeam",
         "teamID":17,
         "teamName":"New England Patriots",
         "name":"Corliss Waitman",
@@ -736,6 +782,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3125280.png"
     },
     {
+        "type":"specialTeam",
         "teamID":18,
         "teamName":"New Orleans Saints",
         "name":"Blake Gillikin",
@@ -752,6 +799,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4045180.png"
     },
     {
+        "type":"specialTeam",
         "teamID":18,
         "teamName":"New Orleans Saints",
         "name":"Wil Lutz",
@@ -768,6 +816,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/2985659.png"
     },
     {
+        "type":"specialTeam",
         "teamID":18,
         "teamName":"New Orleans Saints",
         "name":"Zach Wood",
@@ -784,6 +833,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/2575788.png"
     },
     {
+        "type":"specialTeam",
         "teamID":19,
         "teamName":"New York Giants",
         "name":"Graham Gano",
@@ -800,6 +850,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/12460.png"
     },
     {
+        "type":"specialTeam",
         "teamID":19,
         "teamName":"New York Giants",
         "name":"Jamie Gillan",
@@ -816,6 +867,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3936185.png"
     },
     {
+        "type":"specialTeam",
         "teamID":19,
         "teamName":"New York Giants",
         "name":"Casey Kreiter",
@@ -832,6 +884,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/17304.png"
     },
     {
+        "type":"specialTeam",
         "teamID":20,
         "teamName":"New York Jets",
         "name":"Thomas Hennessy",
@@ -848,6 +901,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/2983155.png"
     },
     {
+        "type":"specialTeam",
         "teamID":20,
         "teamName":"New York Jets",
         "name":"Thomas Morstead",
@@ -864,6 +918,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/12701.png"
     },
     {
+        "type":"specialTeam",
         "teamID":20,
         "teamName":"New York Jets",
         "name":"Greg Zuerlein",
@@ -880,6 +935,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/14993.png"
     },
     {
+        "type":"specialTeam",
         "teamID":21,
         "teamName":"Philadelphia Eagles",
         "name":"Jake Elliott",
@@ -896,6 +952,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3050478.png"
     },
     {
+        "type":"specialTeam",
         "teamID":21,
         "teamName":"Philadelphia Eagles",
         "name":"Rick Lovato",
@@ -912,6 +969,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/2565971.png"
     },
     {
+        "type":"specialTeam",
         "teamID":21,
         "teamName":"Philadelphia Eagles",
         "name":"Arryn Siposs",
@@ -928,6 +986,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4371989.png"
     },
     {
+        "type":"specialTeam",
         "teamID":22,
         "teamName":"Arizona Cardinals",
         "name":"Nolan Cooney",
@@ -944,6 +1003,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4047860.png"
     },
     {
+        "type":"specialTeam",
         "teamID":22,
         "teamName":"Arizona Cardinals",
         "name":"Joe Fortunato",
@@ -960,6 +1020,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/2982297.png"
     },
     {
+        "type":"specialTeam",
         "teamID":22,
         "teamName":"Arizona Cardinals",
         "name":"Elliott Fry",
@@ -976,6 +1037,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3048898.png"
     },
     {
+        "type":"specialTeam",
         "teamID":22,
         "teamName":"Arizona Cardinals",
         "name":"Matt Prater",
@@ -992,6 +1054,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/11122.png"
     },
     {
+        "type":"specialTeam",
         "teamID":23,
         "teamName":"Pittsburgh Steelers",
         "name":"Chris Boswell",
@@ -1008,6 +1071,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/17372.png"
     },
     {
+        "type":"specialTeam",
         "teamID":23,
         "teamName":"Pittsburgh Steelers",
         "name":"Pressley Harvin III",
@@ -1024,6 +1088,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4240485.png"
     },
     {
+        "type":"specialTeam",
         "teamID":23,
         "teamName":"Pittsburgh Steelers",
         "name":"Christian Kuntz",
@@ -1040,6 +1105,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/2978524.png"
     },
     {
+        "type":"specialTeam",
         "teamID":24,
         "teamName":"Los Angeles Chargers",
         "name":"Cameron Dicker",
@@ -1056,6 +1122,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4362081.png"
     },
     {
+        "type":"specialTeam",
         "teamID":24,
         "teamName":"Los Angeles Chargers",
         "name":"Josh Harris",
@@ -1072,6 +1139,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/15151.png"
     },
     {
+        "type":"specialTeam",
         "teamID":24,
         "teamName":"Los Angeles Chargers",
         "name":"Dustin Hopkins",
@@ -1088,6 +1156,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/15965.png"
     },
     {
+        "type":"specialTeam",
         "teamID":24,
         "teamName":"Los Angeles Chargers",
         "name":"JK Scott",
@@ -1104,6 +1173,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3126368.png"
     },
     {
+        "type":"specialTeam",
         "teamID":25,
         "teamName":"San Francisco 49ers",
         "name":"Taybor Pepper",
@@ -1120,6 +1190,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/2979553.png"
     },
     {
+        "type":"specialTeam",
         "teamID":26,
         "teamName":"Seattle Seahawks",
         "name":"Michael Dickson",
@@ -1136,6 +1207,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3929851.png"
     },
     {
+        "type":"specialTeam",
         "teamID":26,
         "teamName":"Seattle Seahawks",
         "name":"Jason Myers",
@@ -1152,6 +1224,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/2473037.png"
     },
     {
+        "type":"specialTeam",
         "teamID":27,
         "teamName":"Tampa Bay Buccaneers",
         "name":"Jake Camarda",
@@ -1168,6 +1241,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4379396.png"
     },
     {
+        "type":"specialTeam",
         "teamID":27,
         "teamName":"Tampa Bay Buccaneers",
         "name":"Chase McLaughlin",
@@ -1184,6 +1258,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3150744.png"
     },
     {
+        "type":"specialTeam",
         "teamID":27,
         "teamName":"Tampa Bay Buccaneers",
         "name":"Zach Triner",
@@ -1200,6 +1275,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3065813.png"
     },
     {
+        "type":"specialTeam",
         "teamID":28,
         "teamName":"Washington Commanders",
         "name":"Camaron Cheeseman",
@@ -1216,6 +1292,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4046543.png"
     },
     {
+        "type":"specialTeam",
         "teamID":28,
         "teamName":"Washington Commanders",
         "name":"Joey Slye",
@@ -1232,6 +1309,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3124084.png"
     },
     {
+        "type":"specialTeam",
         "teamID":28,
         "teamName":"Washington Commanders",
         "name":"Tress Way",
@@ -1248,6 +1326,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/16166.png"
     },
     {
+        "type":"specialTeam",
         "teamID":29,
         "teamName":"Carolina Panthers",
         "name":"Johnny Hekker",
@@ -1264,6 +1343,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/15153.png"
     },
     {
+        "type":"specialTeam",
         "teamID":29,
         "teamName":"Carolina Panthers",
         "name":"JJ Jansen",
@@ -1280,6 +1360,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/11759.png"
     },
     {
+        "type":"specialTeam",
         "teamID":29,
         "teamName":"Carolina Panthers",
         "name":"Eddy Pineiro",
@@ -1296,6 +1377,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4034949.png"
     },
     {
+        "type":"specialTeam",
         "teamID":30,
         "teamName":"Jacksonville Jaguars",
         "name":"Logan Cooke",
@@ -1312,6 +1394,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3115480.png"
     },
     {
+        "type":"specialTeam",
         "teamID":30,
         "teamName":"Jacksonville Jaguars",
         "name":"Ross Matiscik",
@@ -1328,6 +1411,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3928931.png"
     },
     {
+        "type":"specialTeam",
         "teamID":30,
         "teamName":"Jacksonville Jaguars",
         "name":"James McCourt",
@@ -1344,6 +1428,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4033806.png"
     },
     {
+        "type":"specialTeam",
         "teamID":30,
         "teamName":"Jacksonville Jaguars",
         "name":"Riley Patterson",
@@ -1360,6 +1445,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/4243371.png"
     },
     {
+        "type":"specialTeam",
         "teamID":33,
         "teamName":"Baltimore Ravens",
         "name":"Nick Moore",
@@ -1376,6 +1462,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3915184.png"
     },
     {
+        "type":"specialTeam",
         "teamID":33,
         "teamName":"Baltimore Ravens",
         "name":"Justin Tucker",
@@ -1392,6 +1479,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/15683.png"
     },
     {
+        "type":"specialTeam",
         "teamID":34,
         "teamName":"Houston Texans",
         "name":"Ka'imi Fairbairn",
@@ -1408,6 +1496,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/2971573.png"
     },
     {
+        "type":"specialTeam",
         "teamID":34,
         "teamName":"Houston Texans",
         "name":"Cameron Johnston",
@@ -1424,6 +1513,7 @@
         "headshot":"https:\/\/a.espncdn.com\/i\/headshots\/nfl\/players\/full\/3051397.png"
     },
     {
+        "type":"specialTeam",
         "teamID":34,
         "teamName":"Houston Texans",
         "name":"Jon Weeks",
