@@ -262,7 +262,7 @@ function playersChart(athletesData) {
             },
             tooltip: {
                 useHTML: true,
-                pointFormat: 'Name: {point.c} <br/> Age: {point.x} years <br/> Experience: {point.y} years',
+                pointFormat: 'Name: {point.value} <br/> Age: {point.x} years <br/> Experience: {point.y} years',
                 followPointer: true
             },
             plotOptions: {
