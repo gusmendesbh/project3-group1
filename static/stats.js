@@ -2,12 +2,7 @@
 // Get the data
 const stats = "./data-json/stats.json";
 
-// Fetch the JSON data and console log it
-d3.json(stats).then(function(stats_data) {
-    // console.log(teams_data[0]);
-  });
-
-  // INITIALIZE THE DASHBOARD
+// INITIALIZE THE DASHBOARD
 // Create a function to initialize the details
 function init() {
 
@@ -16,24 +11,12 @@ function init() {
 
     // Get the team names and populate the dropdown options
     d3.json(stats).then((stats_data) => {
-        
-        // // Add team names to the dropdown menu
-        // stats_data.forEach((team) => {
-
-        //     // console.log(team);
-
-        //     dropdownMenu.append("option").text(team['shortDisplayName']).property("value", team['shortDisplayName']);
-        // });
 
         // Get the first team
         let firstTeam = stats_data[0]['home'];
 
-        // Console log the first team details
-        // console.log(firstTeam);
-
         // Create the initial plots and demographic info
         teamCharts1(firstTeam);
-        // teamDemoInfo(firstTeam);
     });
     };
 

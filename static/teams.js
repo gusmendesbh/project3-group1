@@ -1,13 +1,9 @@
 // ------- TEAMS DATA ------- //
 // Get the data
 const teams = "./data-json/teams.json";
+let teamsCount;
 
-// Fetch the JSON data and console log it
-d3.json(teams).then(function(teams_data) {
-    // console.log(teams_data[0]);
-  });
-
-  // INITIALIZE THE DASHBOARD
+// INITIALIZE THE DASHBOARD
 // Create a function to initialize the details
 function init() {
 
@@ -19,23 +15,18 @@ function init() {
         
         // Add team names to the dropdown menu
         teams_data.forEach((team) => {
-
-            // console.log(team);
-
             dropdownMenu.append("option").text(team['shortDisplayName']).property("value", team['shortDisplayName']);
         });
+
 
         // Get the first team
         let firstTeam = teams_data[0]['shortDisplayName'];
 
-        // Console log the first team details
-        // console.log(firstTeam);
-
         // Create the initial plots and demographic info
         teamCharts(firstTeam);
-        teamDemoInfo(firstTeam);
+        statCharts(firstTeam);
     });
-    };
+};
 // INIT ENDS HERE
 
 
@@ -44,7 +35,7 @@ function init() {
 // Change the charts and demographic info box based on dropdown selection
 function teamOptionChanged(newTeam) {
     teamCharts(newTeam);
-    teamDemoInfo(newTeam);
+    statCharts(newTeam);
     };
 
 // BUILD THE CHARTS
@@ -56,26 +47,10 @@ function teamCharts(teamName) {
 
     // Filter team data by name
     let filteredTeam = teams_data.filter(team => team['shortDisplayName'] == teamName);
-
         // console.log(filteredTeam);
 
     // Get the first team
-    let firstTeam = filteredTeam[0];
-
-        console.log(firstTeam);
-
-    // Create a win-loss chart
-    // let winLossData = [{ x: ['Wins', 'Losses'], 
-    //                     y: [firstTeam['wins'], firstTeam['losses']], 
-    //                     type: 'bar',
-    //                     marker: {
-    //                         color: '#003366',
-    //                         line: {
-    //                             color: '#CC0000',
-    //                             width: 1.5
-    //                           },
-    //                         opacity: 0.9,
-    //                       }}];
+    let team = filteredTeam[0];
 
     // Create the chart options object
     const options = {
@@ -85,10 +60,10 @@ function teamCharts(teamName) {
             plotShadow: false
         },
         title: {
-            text: 'Result Metrics<br>2022',
+            text: 'Result Metrics - 2022',
             align: 'center',
             verticalAlign: 'middle',
-            y: -60
+            y: -100
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -120,9 +95,9 @@ function teamCharts(teamName) {
             name: 'Result percentage',
             innerSize: '50%',
             data: [
-                ['Win', firstTeam.wins],
-                ['Loss', firstTeam.losses],
-                ['Ties', firstTeam.ties],
+                ['Win', team.wins],
+                ['Loss', team.losses],
+                ['Ties', team.ties],
                 {
                     dataLabels: {
                         enabled: true
@@ -135,63 +110,7 @@ function teamCharts(teamName) {
     // Create the chart
     Highcharts.chart('team-chart2', options);
 
-
-
-
-
-
-    // Create an average points chart
-    // let avgPointsData = [
-    // {
-    //     x: [firstTeam.avgPointsAgainst],
-    //     y: [firstTeam.avgPointsFor],
-    //     mode: 'markers',
-    //     type: 'scatter',
-    //     name: 'Avg Points'
-    // }
-    // ];
-
-    // let avgPointsLayout = {
-    // xaxis: { title: 'Average Points Against' },
-    // yaxis: { title: 'Average Points For' }
-    // };
-
-    // // Create a games played chart
-    // let gamesPlayedData = [
-    // { x: ['Losses', 'Ties', 'Wins'], 
-    //     y: [firstTeam.losses, firstTeam.ties, firstTeam.wins], 
-    //     type: 'bar',
-    //     marker: {
-    //         color: '#003366',
-    //         line: {
-    //             color: '#CC0000',
-    //             width: 1.5
-    //           },
-    //         opacity: 0.9,
-    //       } }
-    // ];
-
-        // Render the plot to the div tag with the relevant ids
-        // Plotly.newPlot('team-chart1', winLossData);
-        Plotly.newPlot('team-chart2', avgPointsData, avgPointsLayout);
-        // Plotly.newPlot('team-chart1', gamesPlayedData);
-        
-    });
-};
-// .catch(error => console.error(error));
-
-
-// TEAM INFORMATION
-// Create a function to get team's Information
-function teamDemoInfo(teamName) {
-
-    // Use D3 to retrieve all data
-    d3.json(teams).then((teams_data) => {
-
-    // Filter team data by name
-        let filteredTeam = teams_data.filter(teams_data => teams_data.shortDisplayName == teamName);
-        
-        // Retrieve all required information
+            // Retrieve all required information
         let team_info = {
             'Team Name': filteredTeam[0]['displayName'], 
             'Location': filteredTeam[0]['location'],
@@ -204,18 +123,164 @@ function teamDemoInfo(teamName) {
 
          // Fecht Team Logos
         d3.select("#team-logo").html("");
-        d3.select("#team-logo").append('img').attr('src', filteredTeam[0]['logos']).attr('alt', filteredTeam[0]['shortDisplayName']).attr('height', 150)
+        d3.select("#team-logo").append('img').attr('src', filteredTeam[0]['logos']).attr('alt', filteredTeam[0]['shortDisplayName']).attr('height', 300)
 
 
-        console.log(filteredTeam[0]['logos'])
+        // console.log(filteredTeam[0])
 
         d3.select("#team-metadata").html("");
          let entries = Object.entries(team_info);
          entries.forEach(([key,value]) => {
             d3.select("#team-metadata").append("h5").text(`${key}: ${value}`);
-        });
-  });
+        })
+        
+    });
 };
+
+
+
+
+
+// ------- STATISTICS DATA ------- //
+// Get the data
+const stats = "./data-json/stats.json";
+function statCharts(teamName) {
+
+    // Use D3 to retrieve all data
+    d3.json(stats).then((stats_data) => {
+
+    // Filter team data by name
+    let filteredTeam = stats_data.filter(team => team['home'] == teamName);
+
+        // console.log(filteredTeam);
+
+    // Get the first team
+    let firstTeam = filteredTeam[0];
+
+        console.log(firstTeam);
+
+        // SCORES CHART
+        // Create the chart options object
+        const options1 = {
+            chart: {
+            type: 'line'
+            },
+            title: {
+                text: 'Scores Away vs. Scores Home'
+            },
+            subtitle: {
+                text: "2002 - 2023"
+            },
+            xAxis: {
+                categories: filteredTeam.map(row => row.date)
+            },
+            yAxis: {
+                title: {
+                    text: 'Score'
+                }
+            },
+            plotOptions: {
+                line: {
+                    dataLabels: {
+                        enabled: false
+                    },
+                    enableMouseTracking: true
+                }
+            },
+            series: [{
+                name: 'Scores Away',
+                data: filteredTeam.map(row => row.score_away)
+            }, {
+                name: 'Scores Home',
+                data: filteredTeam.map(row => row.score_home)
+            }],
+            turboThreshold: 10000000
+        };
+
+
+        // YARDS
+        // Create the chart options object
+        const options2 = {
+            chart: {
+            // type: 'line',
+            zoomType: 'x'
+            },
+            title: {
+                text: 'Passing Yards vs. Rushing Yards'
+            },
+            subtitle: {
+                text: "2002 - 2023"
+            },
+            xAxis: {
+                categories: filteredTeam.map(row => row.date)
+            },
+            yAxis: {
+                title: {
+                    text: 'Yards'
+                }
+            },
+            legend: {
+                enabled: true
+            },
+            plotOptions: {
+                area: {
+                    fillColor: {
+                        linearGradient: {
+                            x1: 0,
+                            y1: 0,
+                            x2: 0,
+                            y2: 1
+                        },
+                        stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                        ]
+                    },
+                    marker: {
+                        radius: 2
+                    },
+                    lineWidth: 1,
+                    states: {
+                        hover: {
+                            lineWidth: 1
+                        }
+                    },
+                    enableMouseTracking: true,
+                    threshold: null
+                }
+            },
+            series: [{
+                type: 'area',
+                name: 'Passing Yards Away',
+                data: filteredTeam.map(row => row.passing_yards_away)
+                }, 
+                {
+                type: 'area',
+                name: 'Passing Yards Home',
+                data: filteredTeam.map(row => row.passing_yards_home)
+                },
+                {
+                type: 'area',
+                name: 'Rushing Yards Away',
+                data: filteredTeam.map(row => row.rushing_yards_away)
+                }, 
+                {
+                type: 'area',
+                name: 'Rushing Yards Home',
+                data: filteredTeam.map(row => row.rushing_yards_home)
+                }
+            ],
+        };
+
+
+    // Create the charts
+    Highcharts.chart('team-chart3', options1);
+    Highcharts.chart('team-chart4', options2);
+
+    });       
+};
+
+
 
 // Call the initialization function
 init();
