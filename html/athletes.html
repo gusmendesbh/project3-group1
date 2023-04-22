@@ -12,13 +12,13 @@
     <title>NFL Dashboard</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/sb-admin-2.min.css" rel="stylesheet">
 
 </head>
 
@@ -31,7 +31,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-football-ball"></i>
                 </div>
@@ -43,7 +43,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="../index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Back to Main Dashboard</span></a>
             </li>
@@ -74,8 +74,8 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">NFL 2021/2022 - Players Dashboard</h1>
+                    <div class="d-sm-flex align-items-center justify-content-between mb-9">
+                        <h1 class="h1 mb-0 text-gray-800">NFL 2021/2022 Dashboard</h1>
                     </div>
 
                     <!-- Content Row -->
@@ -165,47 +165,43 @@
                             <!-- Illustrations -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Athlete Details</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Athlete Headshot</h6>
                                 </div>
                                 <div class="card-body">
-                                    <div class="chart-area p-5" style="height: 500px">
+                                    <div class="chart-map pt-4 pb-2" style="height: 435px">
                                         <!-- <div id="player-team"></div> -->
-                                        <div id="player-logo"></div>
-                                        <div id="player-metadata" style="padding: 20px"></div>
+                                        <div id="player-logo" style="padding: 10px"></div>
+                                        <div id="player-metadata"></div>
                                     </div>                    
                                 </div>
                             </div>                    
                         </div>
 
                         <!-- Area Chart -->
-                        <div class="col-lg-9 mb-5">
+                        <div class="justify-content-center col-xl-3 col-lg-2.5 mb-5">
                             <div class="card shadow mb-4">
 
                                 <!-- Card Headern -->
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">News</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Athlete Details</h6>
                                 </div>
 
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-area" style="height: 500px">
+                                    <div class="chart-map pt-4 pb-2" style="height: 435px">
                                         <div id="player-chart1"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    
 
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Content Column -->
                         <div class="col-lg-6 mb-4">
-
+                        
                             <!-- Project Card Example -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Map Chart</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Athletes Height and Weight Comparison</h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="chart-map pt-4 pb-2">
@@ -213,22 +209,7 @@
                                     </div>
                                 </div>
                             </div>
-
-                        </div>
-
-                        <div class="col-lg-6 mb-4">
                         
-                            <!-- Project Card Example -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Map Chart</h6>
-                                </div>
-                                <div class="card-body">
-                                    <div class="chart-map pt-4 pb-2">
-                                        <div id="player-chart4"></div>
-                                    </div>
-                                </div>
-                            </div>       
                         </div>
                     </div>
 
@@ -243,12 +224,12 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="./static/athletes.js"></script>
+    <script src="../static/athletes.js"></script>
 
     <!-- highcharts scripts -->
     <script src="https://code.highcharts.com/highcharts.js"></script>

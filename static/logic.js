@@ -1,6 +1,6 @@
 // type this in terminal to get data: python -m http.server 8080 --bind 127.0.0.1
 
-d3.json("team_venuej3.json").then((importedData) => {
+d3.json("./data/Outputs_JSON/team_venuej3.json").then((importedData) => {
   var data = importedData;
   
   console.log(data);
@@ -70,7 +70,7 @@ d3.json("team_venuej3.json").then((importedData) => {
   };
 
 // Create a map object, and set the default layers.
-  var myMap = L.map("map", {
+  var myMap = L.map("all-teams-chart", {
    center: [37.09, -95.71],
    zoom: 4,
    layers: [weather, venueLayer]

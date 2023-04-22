@@ -1,6 +1,6 @@
 // ------- TEAMS DATA ------- //
 // Get the data
-const teams = "./data/Outputs_JSON/teams.json";
+const teams = "../data/Outputs_JSON/teams.json";
 let teamsCount;
 
 
@@ -141,7 +141,7 @@ function teamCharts(teamName) {
 
 // ------- STATISTICS DATA ------- //
 // Get the data
-const stats = "./data/Outputs_JSON/stats.json";
+const stats = "../data/Outputs_JSON/stats.json";
 function statCharts(teamName) {
 
     // Use D3 to retrieve all data
@@ -149,8 +149,6 @@ function statCharts(teamName) {
 
     // Filter team data by name
     let filteredTeam = stats_data.filter(team => team['home'] == teamName);
-
-        // console.log(filteredTeam);
 
     // Get the first team
     let firstTeam = filteredTeam[0];
