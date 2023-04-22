@@ -1,7 +1,8 @@
 // ------- TEAMS DATA ------- //
 // Get the data
-const teams = "./data-json/teams.json";
+const teams = "./data/Outputs_JSON/teams.json";
 let teamsCount;
+
 
 // INITIALIZE THE DASHBOARD
 // Create a function to initialize the details
@@ -18,7 +19,6 @@ function init() {
             dropdownMenu.append("option").text(team['shortDisplayName']).property("value", team['shortDisplayName']);
         });
 
-
         // Get the first team
         let firstTeam = teams_data[0]['shortDisplayName'];
 
@@ -27,16 +27,14 @@ function init() {
         statCharts(firstTeam);
     });
 };
-// INIT ENDS HERE
 
 
-
-// UPDATE THE CHARTS AND DEMOGRAPHIC INFO 
-// Change the charts and demographic info box based on dropdown selection
+// UPDATE THE CHARTS AND TEAM DETAILS 
+// Change the charts and team details box based on dropdown selection
 function teamOptionChanged(newTeam) {
     teamCharts(newTeam);
     statCharts(newTeam);
-    };
+};
 
 // BUILD THE CHARTS
 // Create a function to build the charts
@@ -77,7 +75,7 @@ function teamCharts(teamName) {
             pie: {
                 dataLabels: {
                     enabled: true,
-                    distance: -30,
+                    distance: -35,
                     style: {
                         fontWeight: 'bold',
                         color: 'white'
@@ -93,7 +91,7 @@ function teamCharts(teamName) {
         series: [{
             type: 'pie',
             name: 'Result percentage',
-            innerSize: '50%',
+            innerSize: '40%',
             data: [
                 ['Win', team.wins],
                 ['Loss', team.losses],
@@ -110,7 +108,7 @@ function teamCharts(teamName) {
     // Create the chart
     Highcharts.chart('team-chart2', options);
 
-            // Retrieve all required information
+        // Retrieve all required information
         let team_info = {
             'Team Name': filteredTeam[0]['displayName'], 
             'Location': filteredTeam[0]['location'],
@@ -121,7 +119,7 @@ function teamCharts(teamName) {
 
         // let obj = filteredTeam[0]
 
-         // Fecht Team Logos
+         // Fetch Team Logos
         d3.select("#team-logo").html("");
         d3.select("#team-logo").append('img').attr('src', filteredTeam[0]['logos']).attr('alt', filteredTeam[0]['shortDisplayName']).attr('height', 300)
 
@@ -143,7 +141,7 @@ function teamCharts(teamName) {
 
 // ------- STATISTICS DATA ------- //
 // Get the data
-const stats = "./data-json/stats.json";
+const stats = "./data/Outputs_JSON/stats.json";
 function statCharts(teamName) {
 
     // Use D3 to retrieve all data
@@ -279,7 +277,6 @@ function statCharts(teamName) {
 
     });       
 };
-
 
 
 // Call the initialization function
