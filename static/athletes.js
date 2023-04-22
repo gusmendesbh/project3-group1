@@ -80,11 +80,13 @@ function playerDemoInfo(athleteName) {
             d3.select("#player-chart1").append("h6").text(`${key}: ${value}`);
           });
 
+          
+          // console.log(player_info)
     })
 };
 
 
-// Create a function to create Height vs. Weight Chart
+// Create a function to prepare Charts
 function playersChart(athletesData) {
 
     // Use D3 to retrieve all data
@@ -92,8 +94,10 @@ function playersChart(athletesData) {
 
         // Get the full data
         let athletesData = data;
-        console.log(athletesData);
+        // console.log(athletesData);
 
+
+        // HEIGHT VS. WEIGHT CHART
         // Set the chart options
         Highcharts.setOptions({
             colors: ['rgba(5,141,199,0.5)', 'rgba(80,180,50,0.5)', 'rgba(237,86,27,0.5)']
@@ -139,7 +143,7 @@ function playersChart(athletesData) {
         console.log(series);
 
         // Set Chart details
-        const options = {
+        const options1 = {
             chart: {
                 type: 'scatter',
                 zoomType: 'xy'
@@ -187,8 +191,98 @@ function playersChart(athletesData) {
             series
         };
 
-        // Create the chart
-        Highcharts.chart('player-chart3', options);
+
+        // AGE VS. EXPERIENCE CHART
+        // Set the chart options
+
+        let data2 = [];
+        data.forEach(athlete => {
+            data2.push([athlete.age, athlete.xp, athlete.age, athlete.name, athlete.teamName])
+        });
+        console.log(data2);
+        // Set Chart details
+        const options2 = {
+            chart: {
+                type: 'bubble',
+                plotBorderWidth: 1,
+                zoomType: 'xy'
+            },
+            legend: {
+                enabled: false
+            },
+            title: {
+                text: 'Age Vs. Experience'
+            },
+            xAxis: {
+                gridLineWidth: 1,
+                title: {
+                    text: 'Age'
+                },
+                labels: {
+                    format: '{value} years'
+                },
+                plotLines: [{
+                    color: 'black',
+                    dashStyle: 'dot',
+                    width: 2,
+                    value: 65,
+                    label: {
+                        rotation: 0,
+                        y: 15,
+                        style: {
+                            fontStyle: 'italic'
+                        },
+                    },
+                    zIndex: 3
+                }],
+            },
+            yAxis: {
+                startOnTick: false,
+                endOnTick: false,
+                title: {
+                    text: 'Experience'
+                },
+                labels: {
+                    format: '{value} years'
+                },
+                maxPadding: 0.2,
+                plotLines: [{
+                    color: 'black',
+                    dashStyle: 'dot',
+                    width: 2,
+                    value: 50,
+                    label: {
+                        align: 'right',
+                        style: {
+                            fontStyle: 'italic'
+                        },
+                    },
+                    zIndex: 3
+                }],
+            },
+            tooltip: {
+                useHTML: true,
+                pointFormat: 'Name: {point.c} <br/> Age: {point.x} years <br/> Experience: {point.y} years',
+                followPointer: true
+            },
+            plotOptions: {
+                series: {
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.name}'
+                    }
+                }
+            },
+            series: [{
+                data: data2,
+                colorByPoint: true
+            }]
+        };
+
+        console.log(data2);
+        // Create the charts
+        Highcharts.chart('player-chart3', options1);
+        Highcharts.chart('player-chart4', options2);
 });
 
 };
@@ -199,5 +293,4 @@ init();
 
 
     
-
 

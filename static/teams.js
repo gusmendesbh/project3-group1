@@ -1,3 +1,4 @@
+
 // ------- TEAMS DATA ------- //
 // Get the data
 const teams = "../data/Outputs_JSON/teams.json";
@@ -150,6 +151,8 @@ function statCharts(teamName) {
     // Filter team data by name
     let filteredTeam = stats_data.filter(team => team['home'] == teamName);
 
+        // console.log(filteredTeam);
+
     // Get the first team
     let firstTeam = filteredTeam[0];
 
@@ -159,7 +162,8 @@ function statCharts(teamName) {
         // Create the chart options object
         const options1 = {
             chart: {
-            type: 'line'
+            type: 'line',
+            zoomType: 'x'
             },
             title: {
                 text: 'Scores Away vs. Scores Home'
@@ -198,7 +202,7 @@ function statCharts(teamName) {
         // Create the chart options object
         const options2 = {
             chart: {
-            // type: 'line',
+            type: 'line',
             zoomType: 'x'
             },
             title: {
@@ -279,13 +283,4 @@ function statCharts(teamName) {
 
 // Call the initialization function
 init();
-
-
-
-
-
-
-
-
-
 

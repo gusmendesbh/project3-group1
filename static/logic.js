@@ -24,7 +24,6 @@ d3.json("./data/Outputs_JSON/team_venuej3.json").then((importedData) => {
     var markerOptions = {
       title: "MyLocation",
       clickable: true,
-      draggable: true,
       icon: customIcon
     }
 
@@ -51,16 +50,18 @@ d3.json("./data/Outputs_JSON/team_venuej3.json").then((importedData) => {
 	  attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
   });
 
-  var weather = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: 'Map data © <a href="https://openstreetmap.org">OpenStreetMap</a> contributors',
-    maxZoom: 18
-})
+  var cloudLayer = L.tileLayer('https://tile.openweathermap.org/map/clouds_new/{z}/{x}/{y}.png?appid={APIKEY}', {
+  attribution: 'Cloud data &copy; <a href="https://openweathermap.org/">OpenWeatherMap</a>',
+  maxZoom: 18,
+  opacity: 1,
+  APIKEY: 'd476bee909aa4afbd9e735c6b94b8326'
+  })
 
 // Only one base layer can be shown at a time.
   var baseMaps = {
    Street: street,
    Topography: topo,
-   Weather: weather
+   Weather: cloudLayer
   };
 
 // Overlays that can be toggled on or off
@@ -73,7 +74,7 @@ d3.json("./data/Outputs_JSON/team_venuej3.json").then((importedData) => {
   var myMap = L.map("all-teams-chart", {
    center: [37.09, -95.71],
    zoom: 4,
-   layers: [weather, venueLayer]
+   layers: [street, cloudLayer, venueLayer]
   });
 
 // Pass our map layers into our layer control.
