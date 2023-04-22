@@ -65,56 +65,120 @@ function teamCharts(teamName) {
         console.log(firstTeam);
 
     // Create a win-loss chart
-    let winLossData = [{ x: ['Wins', 'Losses'], 
-                        y: [firstTeam['wins'], firstTeam['losses']], 
-                        type: 'bar',
-                        marker: {
-                            color: '#003366',
-                            line: {
-                                color: '#CC0000',
-                                width: 1.5
-                              },
-                            opacity: 0.9,
-                          }}];
+    // let winLossData = [{ x: ['Wins', 'Losses'], 
+    //                     y: [firstTeam['wins'], firstTeam['losses']], 
+    //                     type: 'bar',
+    //                     marker: {
+    //                         color: '#003366',
+    //                         line: {
+    //                             color: '#CC0000',
+    //                             width: 1.5
+    //                           },
+    //                         opacity: 0.9,
+    //                       }}];
+
+    // Create the chart options object
+    const options = {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: 0,
+            plotShadow: false
+        },
+        title: {
+            text: 'Result Metrics<br>2022',
+            align: 'center',
+            verticalAlign: 'middle',
+            y: -60
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: '%'
+            }
+        },
+        plotOptions: {
+            pie: {
+                dataLabels: {
+                    enabled: true,
+                    distance: -30,
+                    style: {
+                        fontWeight: 'bold',
+                        color: 'white'
+                    }
+                },
+                startAngle: -90,
+                endAngle: 90,
+                center: ['50%', '75%'],
+                size: '110%'
+            },
+            enableMouseTracking: true
+        },
+        series: [{
+            type: 'pie',
+            name: 'Result percentage',
+            innerSize: '50%',
+            data: [
+                ['Win', firstTeam.wins],
+                ['Loss', firstTeam.losses],
+                ['Ties', firstTeam.ties],
+                {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            ]
+        }]
+    };
+    
+    // Create the chart
+    Highcharts.chart('team-chart2', options);
+
+
+
+
+
 
     // Create an average points chart
-    let avgPointsData = [
-    {
-        x: [firstTeam.avgPointsAgainst],
-        y: [firstTeam.avgPointsFor],
-        mode: 'markers',
-        type: 'scatter',
-        name: 'Avg Points'
-    }
-    ];
+    // let avgPointsData = [
+    // {
+    //     x: [firstTeam.avgPointsAgainst],
+    //     y: [firstTeam.avgPointsFor],
+    //     mode: 'markers',
+    //     type: 'scatter',
+    //     name: 'Avg Points'
+    // }
+    // ];
 
-    let avgPointsLayout = {
-    xaxis: { title: 'Average Points Against' },
-    yaxis: { title: 'Average Points For' }
-    };
+    // let avgPointsLayout = {
+    // xaxis: { title: 'Average Points Against' },
+    // yaxis: { title: 'Average Points For' }
+    // };
 
-    // Create a games played chart
-    let gamesPlayedData = [
-    { x: ['Losses', 'Ties', 'Wins'], 
-        y: [firstTeam.losses, firstTeam.ties, firstTeam.wins], 
-        type: 'bar',
-        marker: {
-            color: '#003366',
-            line: {
-                color: '#CC0000',
-                width: 1.5
-              },
-            opacity: 0.9,
-          } }
-    ];
+    // // Create a games played chart
+    // let gamesPlayedData = [
+    // { x: ['Losses', 'Ties', 'Wins'], 
+    //     y: [firstTeam.losses, firstTeam.ties, firstTeam.wins], 
+    //     type: 'bar',
+    //     marker: {
+    //         color: '#003366',
+    //         line: {
+    //             color: '#CC0000',
+    //             width: 1.5
+    //           },
+    //         opacity: 0.9,
+    //       } }
+    // ];
 
         // Render the plot to the div tag with the relevant ids
         // Plotly.newPlot('team-chart1', winLossData);
         Plotly.newPlot('team-chart2', avgPointsData, avgPointsLayout);
-        Plotly.newPlot('team-chart1', gamesPlayedData);
+        // Plotly.newPlot('team-chart1', gamesPlayedData);
         
     });
-    };
+};
+// .catch(error => console.error(error));
 
 
 // TEAM INFORMATION
@@ -131,7 +195,8 @@ function teamDemoInfo(teamName) {
         let team_info = {
             'Team Name': filteredTeam[0]['displayName'], 
             'Location': filteredTeam[0]['location'],
-            'Win Percent': filteredTeam[0]['divisionWinPercent'], 
+            'Games Played': filteredTeam[0]['gamesPlayed'],
+            'Win Percent': filteredTeam[0]['winPercent'], 
             'Points': filteredTeam[0]['points']
         };
 
