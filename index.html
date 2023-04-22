@@ -19,6 +19,7 @@
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
 
 </head>
 
@@ -58,10 +59,10 @@
             
             <!-- Dropdown Menu -->
             <li class="nav-item active">
-                <a class="nav-link" href="teams.html">
+                <a class="nav-link" href="./html/teams.html">
                     <i class="fas fa-clipboard"></i>
                     <span>Teams</span></a>
-                <a class="nav-link" href="athletes.html">
+                <a class="nav-link" href="./html/athletes.html">
                     <i class="fas fa-portrait"></i>
                     <span>Athletes</span></a>
             </li>
@@ -170,13 +171,13 @@
                         
                                 <!-- Card Headern -->
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">All Teams</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">NFL 2021/2022 Teams Map</h6>
                                 </div>
                         
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-area">
-                                        <div id="all-teams-chart" style="height: 300px"></div>
+                                    <div class="chart-map pt-4 pb-2">
+                                        <div id="all-teams-chart" style='height: 400px;'></div>
                                     </div>
                                 </div>
                             </div>   
@@ -206,17 +207,28 @@
 
     </div>
 
+
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="./static/main.js"></script>
+    <script src="./static/logic.js"></script>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+
+    <!-- Leaflet JavaScript code -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
 
 </body>
 

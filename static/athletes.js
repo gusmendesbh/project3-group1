@@ -1,7 +1,7 @@
 // ------- ATHLETES DATA ------- //
 
 // Get the data
-const athletes = "./data/Outputs_JSON/athletes.json";
+const athletes = "../data/Outputs_JSON/athletes.json";
 
 
 // INITIALIZE THE DASHBOARD
@@ -71,7 +71,7 @@ function playerDemoInfo(athleteName) {
             
             // Fetch Athlete Headshots
             d3.select("#player-logo").html("");
-            d3.select("#player-logo").append('img').attr('src', athlete['headshot']).attr('alt', athlete['name']).attr('height', 150)
+            d3.select("#player-logo").append('img').attr('src', athlete['headshot']).attr('alt', athlete['name']).attr('height', 250)
   
 
             d3.select("#player-chart1").html("");
@@ -293,5 +293,4 @@ init();
 
 
     
-
 
