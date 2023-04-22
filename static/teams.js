@@ -161,7 +161,8 @@ function statCharts(teamName) {
         // Create the chart options object
         const options1 = {
             chart: {
-            type: 'line'
+            type: 'line',
+            zoomType: 'x'
             },
             title: {
                 text: 'Scores Away vs. Scores Home'
@@ -200,7 +201,7 @@ function statCharts(teamName) {
         // Create the chart options object
         const options2 = {
             chart: {
-            // type: 'line',
+            type: 'line',
             zoomType: 'x'
             },
             title: {
