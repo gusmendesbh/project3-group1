@@ -1,110 +1,205 @@
-
 // ------- ATHLETES DATA ------- //
 
-// Read the data files
-const offense = "./data-json/offense.json";
-const defense = "./data-json/defense.json";
-const special = "./data-json/special.json";
-const files = [offense, defense, special];
-let promises = [];
-let athletes_dataset;
+// Get the data
+const athletes = "./data/Outputs_JSON/athletes.json";
+
 
 // INITIALIZE THE DASHBOARD
 // Create a function to initialize the details
 function init() {
 
-// Add the player names from each dataset to the dropdown
-// Fetch the JSON data
-  let dropdownMenu = d3.select('#selPlayer');
-  let firstPlayer;
+    // Use D3 to select the dropdown menu  
+    let dropdownMenu = d3.select("#selPlayer");
 
-  files.forEach((url) => promises.push(d3.json(url)));
-  Promise.all(promises).then(function (data) {
-    
-    let offense = data[0];
-    let defense = data[1];
-    let special = data[2];
-    firstPlayer = offense[0]['name'];
+    // Get the athlete names and populate the dropdown options
+    d3.json(athletes).then((athletes_data) => {
+        
+        // Add athlete names to the dropdown menu
+        athletes_data.forEach((athlete) => {
+            dropdownMenu.append("option").text(athlete['name']).property("value", athlete['name']);
+        });
 
-    [offense, defense, special].forEach(athletes_dataset => {
-    athletes_dataset.forEach(player => {
-      dropdownMenu.append("option").text(player['name']).property("value", player['name'])     
+        // Get the full data
+        let athletesData = athletes_data;
+
+        // Get the first athlete
+        let firstAthlete = athletes_data[0]['name'];
+
+        // Create the initial plots and demographic info
+        playersChart(athletesData);
+        playerDemoInfo(firstAthlete);
     });
-    });
-    
-  // Get the selected player name
-  const playerName = dropdownMenu.property("value");
-  
-  // Determine which dataset the player is in based on their name
-  if (offense.some(player => player.name === playerName)) {
-    athletes_dataset = offense;
-  } 
-  else if (defense.some(player => player.name === playerName)) {
-    athletes_dataset = defense;
-  } 
-  else if (special.some(player => player.name === playerName)) {
-    athletes_dataset = special;
-  } 
-  else {
-    // Handle the case where the player isn't found in any dataset
-    console.error(`Player "${playerName}" not found.`);
-    return;
-  }
-
-  playerDemoInfo(firstPlayer);
-
-});
 };
-// INIT ENDS HERE
-console.log(athletes_dataset);
 
-function playerOptionChanged(playerName) {
-    playerDemoInfo(playerName);
+
+// UPDATE THE CHARTS AND DEMOGRAPHIC INFO 
+// Change the charts and demographic info box based on dropdown selection
+function playerOptionChanged(newAthlete) {
+    playerDemoInfo(newAthlete);
 };
+
 
 // ATHLETE INFORMATION
-// Create a function to get athlete's Information
-function playerDemoInfo(playerName) {
+// Create a function to get Athlete's Information
+function playerDemoInfo(athleteName) {
     let player_info;
-    let teamName;
 
-    files.forEach((url) => promises.push(d3.json(url)));
-    Promise.all(promises).then(function (data) {
-    
-    let offense = data[0];
-    let defense = data[1];
-    let special = data[2];
+        // Use D3 to retrieve all data
+        d3.json(athletes).then((athletes_data) => {
 
-      [offense, defense, special].forEach(athletes_dataset => {
-      athletes_dataset.forEach(player => {
+            // Filter athlete data by name
+            let filteredAthlete = athletes_data.filter(athlete => athlete['name'] == athleteName);
+                // console.log(filteredTeam);
+        
+            // Get the first athlete
+            let athlete = filteredAthlete[0];
 
-        if (player['name'] == playerName) {
-            player_info = {
-            'Name': player['name'],
-            'Team: ':player['teamName'],
-            'Weight': player['weight'],
-            'Height':player['height'], 
-            'Age': player['age'],
-            'Birth City': player['birthCity'],
-            'Birth Country':player['birthCountry'], 
-            'Position':player['position'], 
-            'Experience (in years)':player['xp']
-            }           
-          }
-            else{
-              return;
-            };
+            // Retrieve all required information
+            let athlete_info = {
+                'Name': athlete['name'],
+                'Team: ': athlete['teamName'],
+                'Player Type': athlete['type'],
+                'Position': athlete['position'], 
+                'Status': athlete['status'], 
+                'Weight (lbs)': athlete['weight'],
+                'Height (inches)': athlete['height'], 
+                'Age': athlete['age'],
+                'Birth City': athlete['birthCity'],
+                'Birth Country': athlete['birthCountry'], 
+                'Experience (in years)': athlete['xp']
+            };     
+            
+            // Fetch Athlete Headshots
+            d3.select("#player-logo").html("");
+            d3.select("#player-logo").append('img').attr('src', athlete['headshot']).attr('alt', athlete['name']).attr('height', 150)
+  
 
-          d3.select("#player-logo").html("");
-          d3.select("#player-logo").append('img').attr('src', player['headshot']).attr('alt', player['name']).attr('height', 150)
+            d3.select("#player-chart1").html("");
+            let entries = Object.entries(athlete_info);
+            entries.forEach(([key,value]) => {
+            d3.select("#player-chart1").append("h6").text(`${key}: ${value}`);
+          });
 
+          
           // console.log(player_info)
+    })
+};
 
 
-          d3.select("#player-metadata").html("");
-          let entries = Object.entries(player_info);
-          entries.forEach(([key,value]) => {
-          d3.select("#player-metadata").append("h5").text(`${key}: ${value}`);
-          })})})})};
+// Create a function to create Height vs. Weight Chart
+function playersChart(athletesData) {
 
+    // Use D3 to retrieve all data
+    d3.json(athletes).then((data) => {
+
+        // Get the full data
+        let athletesData = data;
+        console.log(athletesData);
+
+        // Set the chart options
+        Highcharts.setOptions({
+            colors: ['rgba(5,141,199,0.5)', 'rgba(80,180,50,0.5)', 'rgba(237,86,27,0.5)']
+        });
+
+        // Create data series
+        const series = [{
+            name: 'Offense',
+            id: 'offense',
+            marker: {
+                symbol: 'circle'
+            }},
+            {
+            name: 'Defense',
+            id: 'defense',
+            marker: {
+                symbol: 'triangle'
+            }},
+            {
+            name: 'Special',
+            id: 'specialTeam',
+            marker: {
+                symbol: 'square'
+            }}
+        ];
+
+        // Get Height & Weight Data based on Athlete Type
+        const getData = athleteType => {
+            const temp = [];
+            data.forEach(athlete => {
+                if (athlete.type === athleteType && athlete.height > 0 && athlete.weight > 0) {
+                    temp.push([athlete.height, athlete.weight])
+                }
+            });
+            return temp;
+        };
+
+        // Add the Height and Weight Data to the full data series
+        series.forEach(s => {
+            s.data = getData(s.id);
+        });
+    
+        console.log(series);
+
+        // Set Chart details
+        const options = {
+            chart: {
+                type: 'scatter',
+                zoomType: 'xy'
+            },
+            title: {
+                text: 'Athletes by height and weight',
+                align: 'left'
+            },
+            xAxis: {
+                title: { text: 'Height (inches)' },
+                labels: { format: '{value}' },
+                startOnTick: true,
+                endOnTick: true,
+                showLastLabel: true
+            },
+            yAxis: {
+                title: { text: 'Weight (lbs)' },
+                labels: { format: '{value}' }
+            },
+            legend: {
+                enabled: true
+            },
+            plotOptions: {
+                scatter: {
+                    marker: {
+                        radius: 4,
+                        symbol: 'circle',
+                        states: {
+                            hover: {
+                                enabled: true,
+                                lineColor: 'rgb(100,100,100)'
+                            }
+                        }
+                    },
+                    states: {
+                        hover: {
+                            marker: { enabled: false }
+                        }
+                    }
+                }
+            },
+            tooltip: {
+                pointFormat: 'Name: {series.name} <br/> Height: {point.x} inches <br/> Weight: {point.y} lbs'
+            },
+            series
+        };
+
+        // Create the chart
+        Highcharts.chart('player-chart3', options);
+});
+
+};
+
+
+// Call the initialization function
 init();
+
+
+    
+
+
