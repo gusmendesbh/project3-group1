@@ -13,6 +13,12 @@ function init() {
 
     // Get the athlete names and populate the dropdown options
     d3.json(athletes).then((athletes_data) => {
+
+        // athletes_data.sort((a, b) => a.firstname.localeCompare(b.firstname));
+
+        athletes_data.sort(function(a, b) {
+            return a.name.localeCompare(b.name);
+         });
         
         // Add athlete names to the dropdown menu
         athletes_data.forEach((athlete) => {

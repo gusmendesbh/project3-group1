@@ -1,6 +1,6 @@
 // type this in terminal to get data: python -m http.server 8080 --bind 127.0.0.1
 
-d3.json("./data/Outputs_JSON/team_venuej3.json").then((importedData) => {
+d3.json("./data/Outputs_JSON/team_venue.json").then((importedData) => {
   var data = importedData;
   
   console.log(data);
