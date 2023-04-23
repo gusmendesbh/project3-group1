@@ -89,10 +89,7 @@ CREATE TABLE "stats" (
     "possession_away" TIME   NOT NULL,
     "possession_home" TIME   NOT NULL,
     "score_away" INTEGER   NOT NULL,
-    "score_home" INTEGER   NOT NULL,
-    CONSTRAINT "pk_stats" PRIMARY KEY (
-        "home"
-     )
+    "score_home" INTEGER   NOT NULL
 );
 
 CREATE TABLE "team_venue" (
