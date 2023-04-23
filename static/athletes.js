@@ -111,19 +111,19 @@ function playersChart(athletesData) {
         });
 
 
-        let offenseAthleteNames = [];
-        let defenseAthleteNames = [];
-        let specialAthleteNames = [];
-        athletesData.forEach(athlete => {
-            if (athlete.type == 'offense') {
-                offenseAthleteNames.push(athlete.name)
-            }
-            else if (athlete.type == 'defense') {
-                defenseAthleteNames.push(athlete.name)
-            }
-            else specialAthleteNames.push(athlete.name)
-            }
-        );
+        // let offenseAthleteNames = [];
+        // let defenseAthleteNames = [];
+        // let specialAthleteNames = [];
+        // athletesData.forEach(athlete => {
+        //     if (athlete.type == 'offense') {
+        //         offenseAthleteNames.push(athlete.name)
+        //     }
+        //     else if (athlete.type == 'defense') {
+        //         defenseAthleteNames.push(athlete.name)
+        //     }
+        //     else specialAthleteNames.push(athlete.name)
+        //     }
+        // );
             // console.log(offenseAthleteNames);
 
 
@@ -131,21 +131,21 @@ function playersChart(athletesData) {
         const series = [{
             name: 'Offense',
             id: 'offense',
-            data: [athleteName = offenseAthleteNames],
+            // data: [athleteName = offenseAthleteNames],
             marker: {
                 symbol: 'circle'
             }},
             {
             name: 'Defense',
             id: 'defense',
-            data: [athleteName = defenseAthleteNames],
+            // data: [athleteName = defenseAthleteNames],
             marker: {
                 symbol: 'triangle'
             }},
             {
             name: 'Special',
             id: 'specialTeam',
-            data: [athleteName = specialAthleteNames],
+            // data: [athleteName = specialAthleteNames],
             marker: {
                 symbol: 'square'
             }}
@@ -176,7 +176,7 @@ function playersChart(athletesData) {
                 zoomType: 'xy'
             },
             title: {
-                text: 'Athletes by height and weight',
+                text: 'Athletes by Height and Weight',
                 align: 'left'
             },
             xAxis: {
@@ -225,9 +225,9 @@ function playersChart(athletesData) {
 
         let data2 = [];
         athletesData.forEach(athlete => {
-            data2.push({x: athlete.age, y: athlete.xp, z: athlete.age, 'athleteNeme': athlete.name, 'athleteTeam':athlete.teamName})
+            data2.push({x: athlete.age, y: athlete.xp, z: athlete.age})
         });
-        console.log(data2);
+        // console.log(data2);
         // Set Chart details
         const options2 = {
             chart: {
@@ -311,7 +311,7 @@ function playersChart(athletesData) {
                 }
             },
             series: [{
-                name: athleteName,
+                name: 'Athletes Data',
                 data: data2,
                 colorByPoint: true
             }],
@@ -328,7 +328,3 @@ function playersChart(athletesData) {
 
 // Call the initialization function
 init();
-
-
-    
-
