@@ -1,12 +1,10 @@
 #import dependencies
-from flask import Flask, render_template, url_for, request, jsonify
-from flask_cors import CORS
-#from flask import render_template
-
+from flask import Flask, render_template, url_for, request
+#from flask_cors import CORS
 
 #create an object of the class
 app=Flask(__name__)
-cors = CORS (app)
+#cors = CORS (app)
 
 #specify route for index page
 @app.route('/', methods =['GET'])
