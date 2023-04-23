@@ -65,7 +65,8 @@ function playerDemoInfo(athleteName) {
                 'Name': athlete['name'],
                 'Team: ': athlete['teamName'],
                 'Player Type': athlete['type'],
-                'Position': athlete['position'], 
+                'Position': athlete['position'],
+                'Jersey': athlete['jersey'], 
                 'Status': athlete['status'], 
                 'Weight (lbs)': athlete['weight'],
                 'Height (inches)': athlete['height'], 
@@ -109,22 +110,50 @@ function playersChart(athletesData) {
             colors: ['rgba(5,141,199,0.5)', 'rgba(80,180,50,0.5)', 'rgba(237,86,27,0.5)']
         });
 
+
+        // let offenseAthleteNames;
+        // athletesData.forEach(athlete => {
+        //     if (athlete.type = 'offense') {
+        //         offenseAthleteNames = athletesData.map(row => row.name)
+        //     }
+        //     else offenseAthleteNames = 'None'});
+        //     console.log(offenseAthleteNames);
+
+        let offenseAthleteNames = [];
+        let defenseAthleteNames = [];
+        let specialAthleteNames = [];
+        athletesData.forEach(athlete => {
+            if (athlete.type == 'offense') {
+                offenseAthleteNames.push(athlete.name)
+            }
+            else if (athlete.type == 'defense') {
+                defenseAthleteNames.push(athlete.name)
+            }
+            else specialAthleteNames.push(athlete.name)
+            }
+        );
+            // console.log(offenseAthleteNames);
+
+
         // Create data series
         const series = [{
             name: 'Offense',
             id: 'offense',
+            data: [athleteName = offenseAthleteNames],
             marker: {
                 symbol: 'circle'
             }},
             {
             name: 'Defense',
             id: 'defense',
+            data: [athleteName = defenseAthleteNames],
             marker: {
                 symbol: 'triangle'
             }},
             {
             name: 'Special',
             id: 'specialTeam',
+            data: [athleteName = specialAthleteNames],
             marker: {
                 symbol: 'square'
             }}
@@ -133,7 +162,7 @@ function playersChart(athletesData) {
         // Get Height & Weight Data based on Athlete Type
         const getData = athleteType => {
             const temp = [];
-            data.forEach(athlete => {
+            athletesData.forEach(athlete => {
                 if (athlete.type === athleteType && athlete.height > 0 && athlete.weight > 0) {
                     temp.push([athlete.height, athlete.weight])
                 }
@@ -145,7 +174,7 @@ function playersChart(athletesData) {
         series.forEach(s => {
             s.data = getData(s.id);
         });
-    
+
         console.log(series);
 
         // Set Chart details
@@ -192,7 +221,13 @@ function playersChart(athletesData) {
                 }
             },
             tooltip: {
-                pointFormat: 'Name: {series.name} <br/> Height: {point.x} inches <br/> Weight: {point.y} lbs'
+                // formatter: function() {
+                //     return 'The value for <b>' + this.x + '</b> is <b>' + this.y + '</b>, in series '+ series.athleteName;
+                // }
+                // formatter: function () {
+                //     return 'Name: <b>' + this.point.custom.athleteName + '</b><br> Height: <b>' + this.point.x + '</b>';
+                // }
+                pointFormat: 'Name: {point.athleteName} <br/> Height: {point.x} inches <br/> Weight: {point.y} lbs'
             },
             series
         };

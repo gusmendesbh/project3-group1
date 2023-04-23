@@ -14,6 +14,10 @@ function init() {
 
     // Get the team names and populate the dropdown options
     d3.json(teams).then((teams_data) => {
+
+        teams_data.sort(function(a, b) {
+            return a.shortDisplayName.localeCompare(b.shortDisplayName);
+         });
         
         // Add team names to the dropdown menu
         teams_data.forEach((team) => {
@@ -114,7 +118,9 @@ function teamCharts(teamName) {
             'Team Name': filteredTeam[0]['displayName'], 
             'Location': filteredTeam[0]['location'],
             'Games Played': filteredTeam[0]['gamesPlayed'],
-            'Win Percent': filteredTeam[0]['winPercent'], 
+            'Win Percent': filteredTeam[0]['winPercent'],
+            'OverTime Wins': filteredTeam[0]['OTWins'], 
+            'OverTime Losses': filteredTeam[0]['OTLosses'], 
             'Points': filteredTeam[0]['points']
         };
 
@@ -158,6 +164,7 @@ function statCharts(teamName) {
 
         console.log(firstTeam);
 
+
         // SCORES CHART
         // Create the chart options object
         const options1 = {
@@ -166,7 +173,7 @@ function statCharts(teamName) {
             zoomType: 'x'
             },
             title: {
-                text: 'Scores Away vs. Scores Home'
+                text: 'Scores - Home Team vs. Away Team'
             },
             subtitle: {
                 text: "2002 - 2023"
@@ -177,46 +184,6 @@ function statCharts(teamName) {
             yAxis: {
                 title: {
                     text: 'Score'
-                }
-            },
-            plotOptions: {
-                line: {
-                    dataLabels: {
-                        enabled: false
-                    },
-                    enableMouseTracking: true
-                }
-            },
-            series: [{
-                name: 'Scores Away',
-                data: filteredTeam.map(row => row.score_away)
-            }, {
-                name: 'Scores Home',
-                data: filteredTeam.map(row => row.score_home)
-            }],
-            turboThreshold: 10000000
-        };
-
-
-        // YARDS
-        // Create the chart options object
-        const options2 = {
-            chart: {
-            type: 'line',
-            zoomType: 'x'
-            },
-            title: {
-                text: 'Passing Yards vs. Rushing Yards'
-            },
-            subtitle: {
-                text: "2002 - 2023"
-            },
-            xAxis: {
-                categories: filteredTeam.map(row => row.date)
-            },
-            yAxis: {
-                title: {
-                    text: 'Yards'
                 }
             },
             legend: {
@@ -251,31 +218,133 @@ function statCharts(teamName) {
             },
             series: [{
                 type: 'area',
-                name: 'Passing Yards Away',
-                data: filteredTeam.map(row => row.passing_yards_away)
+                name: 'Home Team',
+                data: filteredTeam.map(row => row.score_home)
                 }, 
                 {
                 type: 'area',
-                name: 'Passing Yards Home',
-                data: filteredTeam.map(row => row.passing_yards_home)
-                },
-                {
-                type: 'area',
-                name: 'Rushing Yards Away',
-                data: filteredTeam.map(row => row.rushing_yards_away)
-                }, 
-                {
-                type: 'area',
-                name: 'Rushing Yards Home',
-                data: filteredTeam.map(row => row.rushing_yards_home)
+                name: 'Away Team',
+                data: filteredTeam.map(row => row.score_away)
                 }
             ],
         };
 
 
+        // ATTEMPTS & DRIVES CHART
+        // Create the chart options object
+        const options2 = {
+            chart: {
+            type: 'line',
+            zoomType: 'x'
+            },
+            title: {
+                text: 'Attempts & Drives - Home Team vs. Away Team'
+            },
+            subtitle: {
+                text: "2002 - 2023"
+            },
+            xAxis: {
+                categories: filteredTeam.map(row => row.date)
+            },
+            yAxis: {
+                title: {
+                    text: 'Yards'
+                }
+            },
+            plotOptions: {
+                line: {
+                    dataLabels: {
+                        enabled: false
+                    },
+                    enableMouseTracking: true
+                }
+            },
+            series: [{
+                name: 'Rushing Attempts - Home Team',
+                data: filteredTeam.map(row => row.rushing_attempts_home)
+                }, 
+                {
+                name: 'Rushing Attempts - Away Team',
+                data: filteredTeam.map(row => row.rushing_attempts_away)
+                },
+                {
+                name: 'Drives - Home Team',
+                data: filteredTeam.map(row => row.drives_home)
+                }, 
+                {
+                name: 'Drives - Away Team',
+                data: filteredTeam.map(row => row.drives_away)
+                }
+            ],
+        };
+
+
+        // YARDS CHART
+        // Create the chart options object
+        const options3 = {
+            chart: {
+            type: 'area',
+            zoomType: 'x'
+            },
+            title: {
+                text: 'Passing & Rushing Yards - Home Team vs. Away Team'
+            },
+            subtitle: {
+                text: "2002 - 2023"
+            },
+            accessibility: {
+                point: {
+                    valueDescriptionFormat: '{index}. {point.category}, {point.y}, {point.percentage:.1f}%.'
+                }
+            },
+            yAxis: {
+                labels: {
+                    format: '{value}%'
+                },
+                title: {
+                    enabled: false
+                }
+            },
+            tooltip: {
+                pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.percentage:.1f}%</b> ({point.y})<br/>',
+                split: true
+            },
+            plotOptions: {
+                series: {
+                    pointStart: 1990
+                },
+                area: {
+                    stacking: 'percent',
+                    marker: {
+                        enabled: false
+                    }
+                }
+            },
+            series: [{
+                name: 'Passing Yards - Home Team',
+                data: filteredTeam.map(row => row.passing_yards_home)
+                }, 
+                {
+                name: 'Passing Yards - Away Team',
+                data: filteredTeam.map(row => row.passing_yards_away)
+                },
+                {
+                name: 'Rushing Yards - Home Team',
+                data: filteredTeam.map(row => row.rushing_yards_home)
+                }, 
+                {
+                name: 'Rushing Yards - Away Team',
+                data: filteredTeam.map(row => row.rushing_yards_away)
+                }
+            ],
+        };
+
+
+        
     // Create the charts
     Highcharts.chart('team-chart3', options1);
     Highcharts.chart('team-chart4', options2);
+    Highcharts.chart('team-chart5', options3);
 
     });       
 };
