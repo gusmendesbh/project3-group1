@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project is created as part of the Data Analytics BootCamp at University of Toronto.     
+This project is created as part of the Data Analytics Boot Camp at University of Toronto.     
 Following are the team members:
 
 - Sara Parveen
@@ -41,7 +41,7 @@ The interactive dashboard has three views:
 
 ## Data Sources
 
-The data for this project is taken from a combination of API, CSV and Mapping sources. Following are the key data sources we have used:
+The data for this project is taken from a combination of web scraping using APIs, CSV and Mapping sources. Following are the key data sources we have used:
 
 - [ESPN API through GitHub](https://gist.github.com/nntrn/ee26cb2a0716de0947a0a4e9a157bc1c)
 
@@ -68,12 +68,56 @@ The team members collaborated on different steps of the project to optimize the 
 
 Following are some of the key steps that were involved in building the dashboard:
 
+
 ### **Step 1: Extract, Transform, Load (ETL) Data**
 
-Identify the data source from SportsReference that you want to use for your dashboard, such as team performance, player performance, and team rankings.
-Extract the data from SportsReference using web scraping techniques or by accessing their API.
-Transform the data by cleaning and organizing it into a format that is suitable for visualization. This may involve data cleaning, data aggregation, and data merging to create meaningful insights.
-Load the transformed data into a database or a data storage solution of your choice, such as MySQL or MongoDB, for easy retrieval and manipulation.
+The data was scraped from ESPN API using *requests*. We reviewed the available data and only extracted the key-value pairs that we needed. For loops were used to loop create URLs for each team. There were a total of 32 teams. 
+
+Similar methodology was used to extrach athletes data from the API by using embedded loops. There were three categories of athletes: offensive, defensive and special. The extracted data included the player type to use for filtering when needed. This created a total of 2158 records.
+
+The statistics data was loaded using the CSV file which is saved in [Resources folder](data/Resources/).
+
+The team venue data was created by scraping data from ESPN API and merging it with location coordinates extracted using GeoPy. This created 32 records in total each corresponding to the 32 teams that participated in 2022 NFL season.
+
+All the extracted data was converted to Pandas Dataframes. This was then saved to [CSV](data/Outputs_CSV/) and [JSON](data/Outputs_JSON/) formats to be able to use for creating the visualizations later. The extraction and transformation process is documented in the Jupyter Notebooks stored in [python](python/) folder.
+
+
+### **Step 2: Create the Database**
+
+An ERD is created for the databse using [QuickDBD](https://www.quickdatabasediagrams.com/).
+
+![NFL_ERD](sql/ERD/NFL_ERD.png)
+
+An SQL database is then created using SQL, specifically PostgreSQL to load the data for easy retrieval and manipulation.
+
+
+### **Step 3: Create the HTML/CSS**
+
+HTML and CSS is developed by taking inspiration from a template on [bootstrap](https://bootstrapmade.com/website-templates/). 
+
+
+### **Step 4: Create the visualizations using JavaScript**
+
+Three [JavaScript files](static/) are developed to create visualizations for the dashboard.
+
+- The Main dashboard has visualizations created using [Leaflet](https://leafletjs.com/) library.
+
+- The Teams and Athletes dasboards have visualizations created using [Highcharts](https://www.highcharts.com/). This is a new JS library which was not covered during class.
+
+
+### **Step 5: Setup the Python Flask app**
+
+
+
+### **Step 6: Render**
+
+
+
+## Conclusion
+
+
+
+
 
 # Step 2: Set Up the Dashboard UI
 
