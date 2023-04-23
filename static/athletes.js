@@ -111,14 +111,6 @@ function playersChart(athletesData) {
         });
 
 
-        // let offenseAthleteNames;
-        // athletesData.forEach(athlete => {
-        //     if (athlete.type = 'offense') {
-        //         offenseAthleteNames = athletesData.map(row => row.name)
-        //     }
-        //     else offenseAthleteNames = 'None'});
-        //     console.log(offenseAthleteNames);
-
         let offenseAthleteNames = [];
         let defenseAthleteNames = [];
         let specialAthleteNames = [];
@@ -237,7 +229,7 @@ function playersChart(athletesData) {
         // Set the chart options
 
         let data2 = [];
-        data.forEach(athlete => {
+        athletesData.forEach(athlete => {
             data2.push([athlete.age, athlete.xp, athlete.age, athlete.name, athlete.teamName])
         });
         console.log(data2);
@@ -302,7 +294,7 @@ function playersChart(athletesData) {
                 }],
             },
             tooltip: {
-                useHTML: true,
+                // useHTML: true,
                 pointFormat: 'Name: {point.value} <br/> Age: {point.x} years <br/> Experience: {point.y} years',
                 followPointer: true
             },
