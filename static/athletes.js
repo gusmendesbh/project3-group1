@@ -213,13 +213,8 @@ function playersChart(athletesData) {
                 }
             },
             tooltip: {
-                // formatter: function() {
-                //     return 'The value for <b>' + this.x + '</b> is <b>' + this.y + '</b>, in series '+ series.athleteName;
-                // }
-                // formatter: function () {
-                //     return 'Name: <b>' + this.point.custom.athleteName + '</b><br> Height: <b>' + this.point.x + '</b>';
-                // }
-                pointFormat: 'Name: {point.athleteName} <br/> Height: {point.x} inches <br/> Weight: {point.y} lbs'
+                pointFormat: 'Height: {point.x} inches <br/> Weight: {point.y} lbs',
+                followPointer: true
             },
             series
         };
@@ -230,7 +225,7 @@ function playersChart(athletesData) {
 
         let data2 = [];
         athletesData.forEach(athlete => {
-            data2.push([athlete.age, athlete.xp, athlete.age, athlete.name, athlete.teamName])
+            data2.push({x: athlete.age, y: athlete.xp, z: athlete.age, 'athleteNeme': athlete.name, 'athleteTeam':athlete.teamName})
         });
         console.log(data2);
         // Set Chart details
@@ -294,25 +289,35 @@ function playersChart(athletesData) {
                 }],
             },
             tooltip: {
-                // useHTML: true,
-                pointFormat: 'Name: {point.value} <br/> Age: {point.x} years <br/> Experience: {point.y} years',
+                pointFormat: 'Age: {point.x} years <br/> Experience: {point.y} years',
                 followPointer: true
             },
             plotOptions: {
                 series: {
                     dataLabels: {
                         enabled: true,
-                        format: '{point.name}'
+                        format: '{point.value}'
+                    },
+                    marker: {
+                        radius: 4,
+                        symbol: 'circle',
+                        states: {
+                            hover: {
+                                enabled: true,
+                                lineColor: 'rgb(100,100,100)'
+                            }
+                        }
                     }
                 }
             },
             series: [{
+                name: athleteName,
                 data: data2,
                 colorByPoint: true
-            }]
+            }],
         };
 
-        console.log(data2);
+       
         // Create the charts
         Highcharts.chart('player-chart3', options1);
         Highcharts.chart('player-chart4', options2);

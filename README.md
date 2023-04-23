@@ -13,7 +13,7 @@ Following are the team members:
 
 ## Project Description 
 
-Football is one of the most popular sports in the world with a large viewing globally. There is a growing need for a platform that could cater for the needs of football enthusiasts and analysts. This project is aimed at creating an interactive dashboard that could serve as a one-point stop for National Football League (NFL) fans seeking information and these are our target audience. The dashboard displays overall Team and Athlete details for the year 2022 and also presents visualizations for teams performance statistics from 2002 onwards to 2023.
+Football is one of the most popular sports in the world with a large viewing globally. There is a growing need for a platform that could cater for the needs of football enthusiasts and analysts. This project is aimed at creating an interactive dashboard that could serve as a one-point stop for National Football League (NFL) fans seeking information and these are our target audience. Some other people who would be interested in the insights represented on the dashboard such as sports analysts, NFL Sports Agents and Football coaches. The dashboard displays overall Team and Athlete details for the year 2022 and also presents visualizations for teams performance statistics from 2002 onwards to 2023.
 
 
 ## The Dashboard
@@ -34,7 +34,7 @@ The interactive dashboard has three views:
 
 3. **Athletes Dashboard**
 
-    The Teams view has a drodown containing list of all the teams that played in the 2022 season. The dashboard displays team logo, basic team data and results metrics for 2022. It also includes three additional visualizations displaying scores, yards and attempts statistics from 2002 to 2023. The dashboard updates every time a different team is selected from the dropdown.
+    The Athletes view has a drodown containing list of all the athletes that played in the 2022 season. The dashboard displays athletes's headshot and their demographic information which update every time a different athlete is selected from the dropdown. This view also includes two charts showing Height Vs. Weight, and Age vs. Experience statistics of all athletes which remain static.
 
     ![Athletes Dashboard](data/Images/Image3.PNG)
 
@@ -93,52 +93,30 @@ An SQL database is then created using SQL, specifically PostgreSQL to load the d
 
 ### **Step 3: Create the HTML/CSS**
 
-HTML and CSS is developed by taking inspiration from a template on [bootstrap](https://bootstrapmade.com/website-templates/). 
+HTML and CSS is developed by taking inspiration from a template on [bootstrap](https://bootstrapmade.com/website-templates/). The template was customized to fulfill the needs of crerating the NFL Dashboard by personalizing the HTML and CSS.
+
+HTM was used to integrate the data retrieval and manipulation logic into the UI using JavaScript mainly.
 
 
 ### **Step 4: Create the visualizations using JavaScript**
 
 Three [JavaScript files](static/) are developed to create visualizations for the dashboard.
 
-- The Main dashboard has visualizations created using [Leaflet](https://leafletjs.com/) library.
+- The Main dashboard has visualizations created using [D3](https://d3js.org/) and [Leaflet](https://leafletjs.com/) library. The interactive map was created data extracted from GeoPy mainly.
 
-- The Teams and Athletes dasboards have visualizations created using [Highcharts](https://www.highcharts.com/). This is a new JS library which was not covered during class.
+- The Teams and Athletes dasboards have visualizations created using [D3](https://d3js.org/) and [Highcharts](https://www.highcharts.com/). **Highcharts** is a new JS library which was not covered during class.
 
+The visualizations are customized by adding features such as labels, legends, tooltips, and interactivity.
 
 ### **Step 5: Setup the Python Flask app**
 
-
+In order to deploy the dashboard to web, we created a Python Flask application. In the Flask application, a few routes were added to display teams and athletes’ pages depending on the requested URL. A debugger was also included when running the application in development mode to enable quick identification and fixing of errors. 
 
 ### **Step 6: Render**
 
+After developing the Flask app, we deployed it to render using a virtual environment. To achieve this, we used [gunicorn](https://gunicorn.org/), a Web Server Gateway Interface, which allows for consistent Python applications deployment.
 
 
 ## Conclusion
 
-
-
-
-
-# Step 2: Set Up the Dashboard UI
-
-Decide on the UI framework or library you want to use for your dashboard, such as React, Angular, or Vue.
-Set up the basic structure of your dashboard, including the main layout, navigation, and any necessary components or widgets.
-Integrate the data retrieval and manipulation logic into your UI components using JavaScript or other relevant programming languages.
-
-# Step 3: Create Visualizations
-
-Choose the appropriate data visualization libraries for creating visualizations, such as Chart.js, D3.js, or Plotly.
-Create visualizations that display relevant statistics, such as wins and losses, player performance, and team rankings. Examples of visualizations could include bar charts, line charts, pie charts, and tables.
-Customize the visualizations based on your requirements, such as adding labels, legends, tooltips, and interactivity.
-
-# Step 4: Implement Interactive Features
-
-Add interactive features to your dashboard, such as filters, dropdowns, and buttons, to allow users to customize the data and insights they want to view.
-Implement functionality for users to switch between different visualizations or views based on their preferences.
-Add features for data drill-down, data filtering, and data sorting to provide more in-depth insights into team or player performance.
-Step 5: Add Additional Functionality
-
-Incorporate additional functionality into your dashboard, such as data updates in real-time or on a scheduled basis, user authentication and authorization, and data export options.
-Perform thorough testing of your dashboard to ensure that it is functioning correctly and providing accurate insights.
-Fine-tune the UI/UX of your dashboard based on feedback from users.
-That's a high-level overview of the steps involved in building a dashboard that provides insights into the performance of a sports team or league using data from SportsReference. Depending on your specific requirements and the tools you choose, the implementation details may vary. Remember to consider data privacy and security when working with sensitive data, and follow best practices for web development and data visualization. Good luck!
+This was a very challenging project for all the team members and it gave us a lot of opportunities to learn new skills and technologies and help each other to troubleshoot at different steps. With collaboration, we were able to successfully perform ETL, convert to a SQL databse, develop HTML/ CSS, prepare JavaScript to help create visualizations, and finally deploy the dashboard to web using Flask and render it using gunicorn.
