@@ -28,12 +28,12 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav sidebar sidebar-dark accordion" style="background-color: #d50a0a;" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-football-ball"></i>
+                    <i class="fas fa-football-ball" style="color: #013369;"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">NFL</div>
             </a>
@@ -60,7 +60,7 @@
             <div class="bg-blue py-2 text-white p-3">
                 
                 <h5><i class="fas fa-clipboard-list"></i> Teams:</h5>
-                <select id="selTeam" onchange="teamOptionChanged(this.value)"></select>
+                <select style="width: 150px"  id="selTeam" onchange="teamOptionChanged(this.value)"></select>
             </div>
         </ul>
         <!-- End of Sidebar -->
@@ -69,18 +69,17 @@
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
-            <div id="content">
+            <div id="content" style='background-color:#013369'>
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-9">
-                        <h1 class="h1 mb-0 text-gray-800">NFL 2021/2022 Dashboard</h1>
+                    <div class="d-sm-flex align-items-center justify-content-between  mt-3 mb-9">
+                        <h1 class="h1 mb-3" style="color: white;">NFL 2021/2022 DASHBOARD</h1>
                     </div>
-
                     <!-- Content Row -->
                     <div class="row">
-
+                    
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary shadow h-100 py-2">
@@ -89,75 +88,78 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Number of Teams in Season 22</div>
-                                            <div id='games-played' class="h5 mb-0 font-weight-bold text-gray-800">32 Teams</div>
+                                            <div class="h5 mb-0 font-weight-bold" style="color: #013369">32 Teams</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-bezier-curve fa-2x text-gray-300"></i>
+                                            <i class="fas fa-bezier-curve fa-2x" style="color: #d50a0a;"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                    
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-success shadow h-100 py-2">
+                            <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Number of Active Players</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Get Number of Active Players</div>
+                                            <div class="h5 mb-0 font-weight-bold" style="color: #013369">2086 Active Players</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-chess-knight fa-2x text-gray-300"></i>
+                                            <i class="fas fa-chess-knight fa-2x" style="color: #d50a0a;"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                    
                         <!-- Earnings (Monthly) Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-info shadow h-100 py-2">
+                            <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Number of Games Played
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                                Number of Games Played
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div id='number-of-teams' class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Get Number of Games</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold" style="color: #013369">
+                                                        285 Games</div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-tasks fa-2x text-gray-300"></i>
+                                            <i class="fas fa-tasks fa-2x" style="color: #d50a0a;"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                    
                         <!-- Pending Requests Card Example -->
                         <div class="col-xl-3 col-md-6 mb-4">
-                            <div class="card border-left-warning shadow h-100 py-2">
+                            <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
                                         <div class="col mr-2">
-                                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Winner of The Season</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">Kansas City Chiefs</div>
+                                            <div class="h5 mb-0 font-weight-bold" style="color: #013369">Kansas City
+                                                Chiefs</div>
                                         </div>
                                         <div class="col-auto">
-                                            <i class="fas fa-trophy	 fa-2x text-gray-300"></i>
+                                            <i class="fas fa-trophy	 fa-2x" style="color: #d50a0a;"></i>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    
                     <!-- Content Row -->
                     <div class="row">            
                         <div class="col-lg-4 mb-5">
@@ -168,7 +170,7 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Team Logo</h6>
                                 </div>
                                 <div class="card-body">
-                                    <div class="chart-area" style="padding: 20px">
+                                    <div class="chart-area align-middle text-center">
                                         <div id="team-logo" class="panel-body"></div>
                                     </div>                    
                                 </div>
@@ -187,7 +189,7 @@
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="chart-area">
-                                        <div class="my-auto" id="team-metadata" style="height: 300px"></div>
+                                        <div class="align-middle text-center pt-5" style="color: #013369;" id="team-metadata"></div>
                                     </div>
                                 </div>
                             </div>
