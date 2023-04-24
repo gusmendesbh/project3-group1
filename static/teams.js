@@ -310,9 +310,6 @@ function statCharts(teamName) {
                 split: true
             },
             plotOptions: {
-                series: {
-                    pointStart: 1990
-                },
                 area: {
                     stacking: 'percent',
                     marker: {
