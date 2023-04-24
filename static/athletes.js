@@ -1,7 +1,7 @@
 // ------- ATHLETES DATA ------- //
 
 // Get the data
-const athletes = "../data/Outputs_JSON/athletes.json";
+const athletes = "../static/athletes.json";
 
 
 // INITIALIZE THE DASHBOARD
