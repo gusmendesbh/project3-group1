@@ -11,6 +11,15 @@ Following are the team members:
 - Jacob Evans
 
 
+## Web Links:
+
+Repository: https://github.com/gusmendesbh/project3-group1
+
+GitHub Pages: https://gusmendesbh.github.io/project3-group1/html/teams.html
+
+Flask-AWS: https://flask-service.ofeg1bv1af188.ca-central-1.cs.amazonlightsail.com/index.html
+
+
 ## Project Description 
 
 Football is one of the most popular sports in the world with a large viewing globally. There is a growing need for a platform that could cater for the needs of football enthusiasts and analysts. This project is aimed at creating an interactive dashboard that could serve as a one-point stop for National Football League (NFL) fans seeking information and these are our target audience. Some other people who would be interested in the insights represented on the dashboard such as sports analysts, NFL Sports Agents and Football coaches. The dashboard displays overall Team and Athlete details for the year 2022 and also presents visualizations for teams performance statistics from 2002 onwards to 2023.
