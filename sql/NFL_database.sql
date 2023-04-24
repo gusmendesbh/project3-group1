@@ -65,31 +65,31 @@ CREATE TABLE teams (
     avgPointsAgainst FLOAT   NOT NULL,
     avgPointsFor FLOAT   NOT NULL,
     divisionWinPercent FLOAT   NOT NULL,
-    gamesPlayed INTEGER   NOT NULL,
-    losses FLOAT   NOT NULL,
+    gamesPlayed FLOAT   NOT NULL,
+    losses FLOAT  NOT NULL,
     ties FLOAT   NOT NULL,
     wins FLOAT   NOT NULL,
     winPercent FLOAT   NOT NULL,
-    points INTEGER   NOT NULL,
+    points FLOAT   NOT NULL,
     PRIMARY KEY (id)
 );
 
 CREATE TABLE athletes (
     type VARCHAR(20)   NOT NULL,
     teamID INTEGER   NOT NULL,
-	FOREIGN KEY (teamID) REFERENCES teams(teamid),
-    teamName VARCHAR(50)   NOT NULL,
-    name VARCHAR(200)   NOT NULL,
+	FOREIGN KEY (teamID) REFERENCES teams(id),
+    teamName VARCHAR(300)   NOT NULL,
+    name VARCHAR(300)   NOT NULL,
     weight INTEGER   NOT NULL,
     height INTEGER   NOT NULL,
     age INTEGER   NOT NULL,
-    birthCity VARCHAR(100)   NOT NULL,
-    birthState VARCHAR(30)   NOT NULL,
-    birthCountry VARCHAR(30)   NOT NULL,
-    position VARCHAR(50)   NOT NULL,
+    birthCity VARCHAR(300)   NOT NULL,
+    birthState VARCHAR(100)   NOT NULL,
+    birthCountry VARCHAR(50)   NOT NULL,
+    position VARCHAR(100)   NOT NULL,
     jersey INTEGER   NOT NULL,
     xp INTEGER   NOT NULL,
-    status VARCHAR(10)   NOT NULL,
+    status VARCHAR(50)   NOT NULL,
     headshot VARCHAR(300)   NOT NULL,
     PRIMARY KEY (name)
 );
@@ -103,13 +103,21 @@ CREATE TABLE team_venue (
     Team_logo VARCHAR(300)   NOT NULL,
     Team_Venue VARCHAR(100)   NOT NULL,
     Venue_City VARCHAR(50)   NOT NULL,
-    Venue_State VARCHAR(10)   NOT NULL,
+    Venue_State VARCHAR(50)   NOT NULL,
     Venue_ZipCode INTEGER   NOT NULL,
     Venue_Capacity INTEGER   NOT NULL,
     Venue_Grass BOOLEAN   NOT NULL,
     Venue_Indoor BOOLEAN   NOT NULL,
     Latitude FLOAT   NOT NULL,
     Longitude FLOAT   NOT NULL,
-    Location VARCHAR(100)   NOT NULL,
+    Location VARCHAR(300)   NOT NULL,
 	PRIMARY KEY (Team_id)
 );
+
+
+-- Import each CSV file into its corresponding SQL table
+-- Display each table to confirm data is imported properly
+SELECT * FROM stats;
+SELECT * FROM teams;
+SELECT * FROM athletes;
+SELECT * FROM team_venue;

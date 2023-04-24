@@ -18,12 +18,12 @@ CREATE TABLE "teams" (
     "avgPointsAgainst" FLOAT   NOT NULL,
     "avgPointsFor" FLOAT   NOT NULL,
     "divisionWinPercent" FLOAT   NOT NULL,
-    "gamesPlayed" INTEGER   NOT NULL,
+    "gamesPlayed" FLOAT   NOT NULL,
     "losses" FLOAT   NOT NULL,
     "ties" FLOAT   NOT NULL,
     "wins" FLOAT   NOT NULL,
     "winPercent" FLOAT   NOT NULL,
-    "points" INTEGER   NOT NULL,
+    "points" FLOAT   NOT NULL,
     CONSTRAINT "pk_teams" PRIMARY KEY (
         "id"
      )
@@ -32,18 +32,18 @@ CREATE TABLE "teams" (
 CREATE TABLE "athletes" (
     "type" VARCHAR(20)   NOT NULL,
     "teamID" INTEGER   NOT NULL,
-    "teamName" VARCHAR(50)   NOT NULL,
-    "name" VARCHAR(200)   NOT NULL,
+    "teamName" VARCHAR(300)   NOT NULL,
+    "name" VARCHAR(300)   NOT NULL,
     "weight" INTEGER   NOT NULL,
     "height" INTEGER   NOT NULL,
     "age" INTEGER   NOT NULL,
-    "birthCity" VARCHAR(100)   NOT NULL,
-    "birthState" VARCHAR(30)   NOT NULL,
-    "birthCountry" VARCHAR(30)   NOT NULL,
-    "position" VARCHAR(50)   NOT NULL,
+    "birthCity" VARCHAR(300)   NOT NULL,
+    "birthState" VARCHAR(100)   NOT NULL,
+    "birthCountry" VARCHAR(50)   NOT NULL,
+    "position" VARCHAR(100)   NOT NULL,
     "jersey" INTEGER   NOT NULL,
     "xp" INTEGER   NOT NULL,
-    "status" VARCHAR(10)   NOT NULL,
+    "status" VARCHAR(50)   NOT NULL,
     "headshot" VARCHAR(300)   NOT NULL,
     CONSTRAINT "pk_athletes" PRIMARY KEY (
         "name"
@@ -86,8 +86,8 @@ CREATE TABLE "stats" (
     "drives_home" INTEGER   NOT NULL,
     "def_st_td_away" INTEGER   NOT NULL,
     "def_st_td_home" INTEGER   NOT NULL,
-    "possession_away" TIME   NOT NULL,
-    "possession_home" TIME   NOT NULL,
+    "possession_away" VARCHAR   NOT NULL,
+    "possession_home" VARCHAr   NOT NULL,
     "score_away" INTEGER   NOT NULL,
     "score_home" INTEGER   NOT NULL
 );
